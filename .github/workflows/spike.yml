@@ -25,7 +25,7 @@ jobs:
           python-version: "3.12"
       - run: nproc && free -g
       - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
-      - run: pip install faster-whisper==1.2.1
+      - run: pip install faster-whisper==1.2.1 av==18.1.0
       - name: cut 20 min sample from episode 394
         run: |
           ffmpeg -nostdin -loglevel error -ss 3600 -t 1200 \
