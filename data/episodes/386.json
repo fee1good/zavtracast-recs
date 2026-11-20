@@ -1,0 +1,69 @@
+{
+  "episode": 386,
+  "title": "Завтракаст 386 – Шортс",
+  "date": "2026-07-30",
+  "page_url": "https://zavtracast.ru/386.html",
+  "audio_url": "https://media.blubrry.com/zavtracast/zavtracast.ru/p/zavtracast386-shorts.mp3",
+  "duration": 13092,
+  "records": [
+    {
+      "id": "386-halo-campaign-evolved-maxim",
+      "title": "Halo: Campaign Evolved",
+      "type": "game",
+      "host": "maxim",
+      "verdict": "mixed",
+      "summary": "Ремейк первой части серии на движке Unreal Engine 5 порадовал обновленной графикой, но расстроил спорной новой озвучкой, странным темпом катсцен и скучной второй половиной игры.",
+      "t": 9744
+    },
+    {
+      "id": "386-disclosure-day-dima",
+      "title": "Disclosure Day",
+      "title_ru": "День разоблачения",
+      "type": "movie",
+      "host": "dima",
+      "verdict": "negative",
+      "summary": "Новая картина Стивена Спилберга про инопланетян показалась слабым проходным кино с нелогичным сценарием и вторичными идеями.",
+      "t": 10397
+    },
+    {
+      "id": "386-babylon-5-the-gathering-timur",
+      "title": "Babylon 5: The Gathering",
+      "title_ru": "Вавилон-5: Сбор",
+      "type": "movie",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Пилотный фильм культовой космической фантастики смотрится свежо и сегодня благодаря отличным декорациям, проработанным костюмам и заложенным сюжетным основам.",
+      "t": 10763
+    },
+    {
+      "id": "386-goodbye-lara-maxim",
+      "title": "Goodbye, Lara",
+      "title_ru": "Прощай, Лара",
+      "type": "anime",
+      "host": "maxim",
+      "verdict": "positive",
+      "summary": "Оригинальное аниме с переосмыслением сказки про Русалочку в японских декорациях выделяется отличной визуальной стилистикой в духе девяностых и теплой атмосферой.",
+      "t": 11676
+    },
+    {
+      "id": "386-yani-neko-maxim",
+      "title": "Yani Neko",
+      "title_ru": "Табакошка",
+      "type": "anime",
+      "host": "maxim",
+      "verdict": "mixed",
+      "summary": "Комедийный тайтл про курящую кошку-девочку привлекает отличной визуальной частью, но изобилует чернухой и сортирным юмором строго на любителя.",
+      "t": 11866
+    },
+    {
+      "id": "386-adventure-time-side-quests-timur",
+      "title": "Adventure Time: Side Quests",
+      "title_ru": "Время приключений: Другие квесты",
+      "type": "cartoon",
+      "host": "timur",
+      "verdict": "mixed",
+      "summary": "Приквел о приключениях Финна и Джейка страдает от неудачной новой английской озвучки главного героя и спорного визуала, однако в русском дубляже сгодится фанатам для короткого развлечения.",
+      "t": 11993
+    }
+  ]
+}

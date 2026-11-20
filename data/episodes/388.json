@@ -1,0 +1,171 @@
+{
+  "episode": 388,
+  "title": "Завтракаст 388 – Кибер Лук",
+  "date": "2026-08-24",
+  "page_url": "https://zavtracast.ru/388.html",
+  "audio_url": "https://media.blubrry.com/zavtracast/zavtracast.ru/p/zavtracast388-leek.mp3",
+  "duration": 13865,
+  "records": [
+    {
+      "id": "388-assassin-s-creed-iv-black-flag-dima",
+      "title": "Assassin's Creed IV: Black Flag",
+      "type": "game",
+      "host": "dima",
+      "verdict": "mixed",
+      "summary": "Игра остается хорошей, но в ней слишком много однообразного геймплея и гринда, поэтому брать ее стоит только по хорошей скидке.",
+      "t": 7825
+    },
+    {
+      "id": "388-gears-of-war-e-day-dima",
+      "title": "Gears of War: E-Day",
+      "type": "game",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Мультиплеерная бета впечатлила высокой детальностью графики на Unreal Engine и увлекательным режимом взаимодействия нескольких отрядов.",
+      "t": 8007
+    },
+    {
+      "id": "388-quake-dawn-of-the-machine-dima",
+      "title": "Quake: Dawn of the Machine",
+      "type": "game",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Отличное дополнение к первому Quake с филигранным левел-дизайном, высокой сложностью и шикарным атмосферным индастриал-эмбиентом.",
+      "t": 8169
+    },
+    {
+      "id": "388-tom-clancy-s-ghost-recon-wildlands-last-rites-dima",
+      "title": "Tom Clancy's Ghost Recon Wildlands: Last Rites",
+      "type": "game",
+      "host": "dima",
+      "verdict": "negative",
+      "summary": "Короткое бесплатное дополнение всего на 40 минут с интересной атмосферой, которое не стоит технических вылетов и проблем с запуском.",
+      "t": 8369
+    },
+    {
+      "id": "388-house-of-the-dragon-timur",
+      "title": "House of the Dragon",
+      "title_ru": "Дом Дракона",
+      "type": "series",
+      "host": "timur",
+      "verdict": "mixed",
+      "summary": "Сезон получился неоднозначным из-за провисающей середины и филлерных эпизодов, хотя стартовые и финальные серии порадовали зрелищным экшеном.",
+      "t": 8969
+    },
+    {
+      "id": "388-silo-timur",
+      "title": "Silo",
+      "title_ru": "Укрытие",
+      "type": "series",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Увлекательный научно-фантастический сериал с интригующим детективным сюжетом, отличной динамикой развития событий и глубокой проработкой мира.",
+      "t": 9558
+    },
+    {
+      "id": "388-restory-chill-electronics-repairs-dima",
+      "title": "ReStory: Chill Electronics Repairs",
+      "type": "game",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Приятная и расслабляющая медитативная игра о ремонте культовой ретро-электроники с хорошим музыкальным сопровождением.",
+      "t": 9925
+    },
+    {
+      "id": "388-dimhaven-the-lost-source-dima",
+      "title": "Dimhaven: The Lost Source",
+      "type": "game",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Атмосферная игра-головоломка в стиле ретро с интригующей лавкрафтовской историей и изобретательными сложными загадками.",
+      "t": 10229
+    },
+    {
+      "id": "388-clevatess-timur",
+      "title": "Clevatess",
+      "title_ru": "Клеватэс",
+      "type": "anime",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Затягивающее мрачное и взрослое темное фэнтези с серьезными политическими интригами, проработанными персонажами и качественной анимацией боев.",
+      "t": 10494
+    },
+    {
+      "id": "388-supergirl-dima",
+      "title": "Supergirl",
+      "title_ru": "Супергёрл",
+      "type": "movie",
+      "host": "dima",
+      "verdict": "negative",
+      "summary": "Слабый и необязательный супергеройский фильм с невнятной мотивацией персонажей, шаблонным главным злодеем и рваным повествованием.",
+      "t": 11031
+    },
+    {
+      "id": "388-lanterns-dima",
+      "title": "Lanterns",
+      "title_ru": "Фонари",
+      "type": "series",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Интригующий приземленный детектив про космических полицейских в стиле «Настоящего детектива» с отличной актерской игрой.",
+      "t": 11403
+    },
+    {
+      "id": "388-chants-of-sennaar-timur",
+      "title": "Chants of Sennaar",
+      "type": "game",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Великолепное приключение с расшифровкой языков различных народов Вавилонской башни, стильной графикой, глубоким подтекстом и прекрасной музыкой.",
+      "t": 12124
+    },
+    {
+      "id": "388-jackass-best-and-last-dima",
+      "title": "Jackass: Best and Last",
+      "title_ru": "Чудаки: Лучшее и последнее",
+      "type": "movie",
+      "host": "dima",
+      "verdict": "negative",
+      "summary": "Скучная документальная нарезка старых вырезанных материалов и архивов с MTV, держащаяся лишь на ностальгии и сомнительных приколах.",
+      "t": 12540
+    },
+    {
+      "id": "388-backrooms-dima",
+      "title": "Backrooms",
+      "title_ru": "Закулисье реальности",
+      "type": "movie",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Атмосферный хоррор о лиминальных пространствах, впечатляющий своей визуальной работой и качественным звуковым дизайном.",
+      "t": 12750
+    },
+    {
+      "id": "388-sterling-point-timur",
+      "title": "Sterling Point",
+      "title_ru": "Стерлинг-Поинт",
+      "type": "series",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Чудесный подростковый сериал с интригующим детективным сюжетом в духе Life is Strange, эмоциональными персонажами и великолепной атмосферой.",
+      "t": 12979
+    },
+    {
+      "id": "388-почему-об-ии-никто-не-просил-team",
+      "title": "Почему об ИИ никто не просил",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://jacobin.com/2026/08/ai-llms-monopoly-bubble-capital",
+      "t": 0
+    },
+    {
+      "id": "388-история-жены-дарио-амодея-главы-anthropic-team",
+      "title": "История жены Дарио Амодея, главы Anthropic",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://www.wsj.com/tech/ai/claude-dario-amodei-wife-anthropic-e1eeda7d",
+      "t": 0
+    }
+  ]
+}

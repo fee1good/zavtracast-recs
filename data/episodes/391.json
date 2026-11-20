@@ -1,0 +1,151 @@
+{
+  "episode": 391,
+  "title": "Завтракаст 391 – Вы не поняли",
+  "date": "2026-10-02",
+  "page_url": "https://zavtracast.ru/391.html",
+  "audio_url": "https://media.blubrry.com/zavtracast/zavtracast.ru/p/zavtracast391-understand.mp3",
+  "duration": 14258,
+  "records": [
+    {
+      "id": "391-diablo-iv-lord-of-hatred-maxim",
+      "title": "Diablo IV: Lord of Hatred",
+      "type": "game",
+      "host": "maxim",
+      "verdict": "positive",
+      "summary": "Максим похвалил исправления в балансе, дизайне интерфейса, итемизации и генерации подземелий, отметив, что игра сейчас заслуживает второго шанса.",
+      "t": 8895
+    },
+    {
+      "id": "391-diablo-iv-lord-of-hatred-dima",
+      "title": "Diablo IV: Lord of Hatred",
+      "type": "game",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Дима похвалил сюжет и постановку дополнения, хотя остался недоволен агрессивной монетизацией и слабым предыдущим DLC.",
+      "t": 8895
+    },
+    {
+      "id": "391-the-gentlemen-timur",
+      "title": "The Gentlemen",
+      "title_ru": "Джентльмены",
+      "type": "series",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Тимур остался в восторге от второго сезона, похвалив съемку, интригующий сюжет, колоритных персонажей и фирменный стиль Гая Ричи.",
+      "t": 9577
+    },
+    {
+      "id": "391-silo-timur",
+      "title": "Silo",
+      "title_ru": "Укрытие",
+      "type": "series",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Тимур похвалил третий сезон за параллельное повествование в двух временных линиях, высокий уровень напряжения и проработку мира.",
+      "t": 9840
+    },
+    {
+      "id": "391-tondemo-skill-de-isekai-hourou-meshi-dima",
+      "title": "Tondemo Skill de Isekai Hourou Meshi",
+      "title_ru": "Кулинарные скитания в параллельном мире",
+      "type": "anime",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Дима порекомендовал это очень доброе и милое исекай-аниме про готовку блюд в фэнтези-мире с помощью способностей онлайн-магазина.",
+      "t": 10102
+    },
+    {
+      "id": "391-resident-evil-maxim",
+      "title": "Resident Evil",
+      "title_ru": "Обитель зла",
+      "type": "movie",
+      "host": "maxim",
+      "verdict": "positive",
+      "summary": "Максим высоко оценил фильм Зака Крегера как ироничный выживальный боевик, который отлично передает ощущения от оригинальной игровой серии.",
+      "t": 10377
+    },
+    {
+      "id": "391-the-end-of-oak-street-timur",
+      "title": "The End of Oak Street",
+      "title_ru": "На краю Оак-Стрит",
+      "type": "movie",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Тимур остался доволен фильмом, назвав его простым и красивым развлекательным экшеном в стиле кино 80-90-х годов.",
+      "t": 10830
+    },
+    {
+      "id": "391-the-end-of-oak-street-dima",
+      "title": "The End of Oak Street",
+      "title_ru": "На краю Оак-Стрит",
+      "type": "movie",
+      "host": "dima",
+      "verdict": "negative",
+      "summary": "Дима посчитал фильм предсказуемой и скучной пустышкой без интересной глубокой идеи, все ключевые моменты которой показали еще в трейлере.",
+      "t": 10830
+    },
+    {
+      "id": "391-the-thaumaturge-timur",
+      "title": "The Thaumaturge",
+      "type": "game",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Тимур горячо порекомендовал детективную RPG в альтернативной Варшаве 1905 года за интересную мафиозно-оккультную фабулу, увлекущие квесты и атмосферу.",
+      "t": 11520
+    },
+    {
+      "id": "391-control-resonant-maxim",
+      "title": "Control Resonant",
+      "type": "game",
+      "host": "maxim",
+      "verdict": "mixed",
+      "summary": "Максим назвал игру шаг назад из-за затянутого пролога, неоднородной графики и неоднозначной смены геймплейного фокуса на милишный боевик.",
+      "t": 12384
+    },
+    {
+      "id": "391-control-resonant-dima",
+      "title": "Control Resonant",
+      "type": "game",
+      "host": "dima",
+      "verdict": "mixed",
+      "summary": "Дима раскритиковал неудачный пролог, смену протагониста и выматывающие ближние бои с «губками для урона», хотя похвалил раскрывшуюся в середине историю.",
+      "t": 12384
+    },
+    {
+      "id": "391-статья-о-том-как-промышленно-выращивают-грибы-team",
+      "title": "Статья о том, как промышленно выращивают грибы",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://habr.com/ru/companies/beget/articles/1084562/",
+      "t": 0
+    },
+    {
+      "id": "391-презервисты-собирают-копии-фильмов-на-сайте-архива-team",
+      "title": "Презервисты собирают копии фильмов на сайте Архива",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://docs.google.com/spreadsheets/d/1feZ2FLcP7QGUhzy6pgrwyhSBDViXHk5h/htmlview?usp=sharing&ouid=106707824879387671898&rtpof=true&sd=true&pru=AAABoQlopng*RZaLiapFHcghNkqnd5-iag",
+      "t": 0
+    },
+    {
+      "id": "391-библиотека-старых-моделек-анимаций-и-уровней-из-ретроигр-типа-ff7-team",
+      "title": "Библиотека старых моделек, анимаций и уровней из ретроигр типа FF7",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://library.pardallgames.com/",
+      "t": 0
+    },
+    {
+      "id": "391-как-взломали-вспомогательный-vfpu-чип-в-psp-team",
+      "title": "Как взломали вспомогательный VFPU-чип в PSP",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://www.ppsspp.org/blog/vfpu-math-re/",
+      "t": 0
+    }
+  ]
+}

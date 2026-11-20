@@ -1,0 +1,66 @@
+{
+  "episode": 395,
+  "title": "Завтракаст 395 – Nvidiot",
+  "date": "2026-11-11",
+  "page_url": "https://zavtracast.ru/395.html",
+  "audio_url": "https://media.blubrry.com/zavtracast/zavtracast.ru/p/zavtracast395-nvidiot.mp3",
+  "duration": 8261,
+  "records": [
+    {
+      "id": "395-resident-evil-dima",
+      "title": "Resident Evil",
+      "title_ru": "Обитель зла",
+      "type": "movie",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Фильм показался отличной черной комедией и сатирой на видеоигры, которую интересно смотреть, хоть картина и имеет мало общего с оригинальной франшизой.",
+      "t": 4546
+    },
+    {
+      "id": "395-your-mother-your-mother-your-mother-dima",
+      "title": "Your Mother Your Mother Your Mother",
+      "title_ru": "Твоя мать, твоя мать, твоя мать",
+      "type": "movie",
+      "host": "dima",
+      "verdict": "negative",
+      "summary": "Дима остался недоволен претенциозной драмой про религиозного наемного убийцу, посчитав фильм слабым и бессмысленным.",
+      "t": 4838
+    },
+    {
+      "id": "395-moza-tsw-wheel-maxim",
+      "title": "Moza TSW Wheel",
+      "type": "other",
+      "host": "maxim",
+      "verdict": "positive",
+      "summary": "Максим высоко оценил специализированный руль увеличенного диаметра для автосимуляторов, отметив отличные кнопки и удобное быстросъемное крепление.",
+      "t": 5294
+    },
+    {
+      "id": "395-moza-mf-stalks-maxim",
+      "title": "Moza MF Stalks",
+      "type": "other",
+      "host": "maxim",
+      "verdict": "mixed",
+      "summary": "Подрулевые переключатели добавляют аутентичности вождению, однако устройства первой ревизии требуют доработки из-за отдельного провода и неплотной посадки.",
+      "t": 5294
+    },
+    {
+      "id": "395-the-legend-of-zelda-ocarina-of-time-dima",
+      "title": "The Legend of Zelda: Ocarina of Time",
+      "type": "game",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Дима похвалил обновленную версию классической игры за насыщенный мир и высокий темп, несмотря на устаревший в первых часах геймдизайн.",
+      "t": 6172
+    },
+    {
+      "id": "395-the-legend-of-zelda-ocarina-of-time-maxim",
+      "title": "The Legend of Zelda: Ocarina of Time",
+      "type": "game",
+      "host": "maxim",
+      "verdict": "positive",
+      "summary": "Максиму очень понравилась ремейк-версия игры благодаря компактному дизайну локаций, хорошему ритму и увлекательным элементам приключения.",
+      "t": 6852
+    }
+  ]
+}
