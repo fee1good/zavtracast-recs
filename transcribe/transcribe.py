@@ -8,6 +8,7 @@ from faster_whisper import WhisperModel, decode_audio
 
 SAMPLE_RATE = 16000
 PROGRESS_EVERY = 600.0
+CHUNK_SECONDS = 1200.0
 
 
 def parse_args() -> argparse.Namespace:
@@ -19,28 +20,43 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--beam", type=int, default=5)
     p.add_argument("--threads", type=int, default=4)
     p.add_argument("--start", type=float, default=0.0)
+    p.add_argument("--chunk", type=float, default=CHUNK_SECONDS)
     return p.parse_args()
 
 
 def transcribe(args: argparse.Namespace) -> dict:
     audio = decode_audio(args.audio, sampling_rate=SAMPLE_RATE)
     duration = len(audio) / SAMPLE_RATE
-    start = max(args.start, 0.0)
-    audio = audio[int(start * SAMPLE_RATE):]
 
     model = WhisperModel(
         args.model, device="cpu", compute_type="int8", cpu_threads=args.threads
     )
-    segments, _ = model.transcribe(
-        audio, language="ru", beam_size=args.beam, vad_filter=True
-    )
+    out = []
+    for begin, end in windows(args.start, duration, args.chunk):
+        piece = audio[int(begin * SAMPLE_RATE):int(end * SAMPLE_RATE)]
+        segments, _ = model.transcribe(
+            piece, language="ru", beam_size=args.beam, vad_filter=True
+        )
+        out.extend(shift_segments(segments, begin, duration))
 
     return {
         "episode": args.episode,
         "model": args.model,
         "duration": round(duration, 2),
-        "segments": shift_segments(segments, start, duration),
+        "segments": out,
     }
+
+
+def windows(start: float, duration: float, chunk: float) -> list[tuple[float, float]]:
+    if chunk <= 0:
+        raise ValueError("chunk must be positive")
+    begin = max(start, 0.0)
+    out = []
+    while begin < duration:
+        end = min(begin + chunk, duration)
+        out.append((begin, end))
+        begin = end
+    return out
 
 
 def shift_segments(segments, start: float, duration: float) -> list[dict]:
