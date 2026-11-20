@@ -222,18 +222,18 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
 
 ### Task 7: `recs` CLI
 
-- [ ] `cmd/recs/main.go`: subcommands `discover`, `classify`, `build`,
+- [x] `cmd/recs/main.go`: subcommands `discover`, `classify`, `build`,
       `eval` via `flag.NewFlagSet`; shared flags
       `-feed` (default `feed.URL`, a value without `http` prefix is read as a
       local file), `-data data/episodes`, `-transcripts .transcripts`,
       `-min 386`, `-episode 0`; exit code 1 on error with `slog.Error`
-- [ ] `discover`: fetch feed; candidates = episodes with Number >= min and
+- [x] `discover`: fetch feed; candidates = episodes with Number >= min and
       no data file; with `-episode N` the candidate set is just N (must exist
       in the feed, else error) regardless of data file. Matrix = candidates
       without a transcript. Prints to stdout exactly two lines:
       `matrix=<compact JSON array of {"episode":N,"audio_url":"..."}>` and
       `count=<len>`. Empty matrix prints `matrix=[]`
-- [ ] `classify`: flags `-model` (default `cmp.Or(os.Getenv("RECS_GEMINI_MODEL"),
+- [x] `classify`: flags `-model` (default `cmp.Or(os.Getenv("RECS_GEMINI_MODEL"),
       classify.DefaultModel)`); requires `GEMINI_API_KEY`. Targets = feed
       episodes >= min with a transcript and no data file, or just `-episode N`
       when set (overwrites). Per target: Classify, `record.Clean` LLM records,
@@ -241,17 +241,17 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
       separately and only log their drops, write episode file with LLM records
       then articles. Logs each dropped record. Continues to the next episode on
       error; returns `errors.Join` of all episode errors
-- [ ] `build`: flags `-site site`, `-out _site`, `-goatcounter`; ReadAll data
+- [x] `build`: flags `-site site`, `-out _site`, `-goatcounter`; ReadAll data
       → `site.Build`
-- [ ] `eval`: flag `-golden eval/golden`; for each golden episode file with a
+- [x] `eval`: flag `-golden eval/golden`; for each golden episode file with a
       matching data file print `episode N: found X missed Y extra Z verdict W`
       and the missed / extra keys, then totals with precision and recall
-- [ ] Tests for discover and classify logic with injected deps: factor the
+- [x] Tests for discover and classify logic with injected deps: factor the
       bodies into functions taking `[]feed.Episode`, dirs and a
       `classify.Generator`, test with the fixture feed, temp dirs and a fake
       generator (state 1 / 2 / 3 episodes, forced episode, unknown forced
       episode, one episode failing does not stop the next, threshold skip)
-- [ ] `data/episodes/.gitkeep`, `eval/golden/.gitkeep`
+- [x] `data/episodes/.gitkeep`, `eval/golden/.gitkeep`
 
 ### Task 8: Transcriber
 
