@@ -40,18 +40,18 @@ This plan wins where the two differ.
 
 ### Task 1: Scaffold module, clock helpers, drop the spike
 
-- [ ] `go mod init github.com/fee1good/zavtracast-recs`, set `go 1.26`
-- [ ] Delete `spike/` and `.github/workflows/spike.yml`
-- [ ] `.gitignore`: `.transcripts/`, `_site/`, `*.mp3`, `__pycache__/`, `.venv/`
-- [ ] `internal/clock`: `Format(sec int) string` returns `%02d:%02d:%02d`
+- [x] `go mod init github.com/fee1good/zavtracast-recs`, set `go 1.26`
+- [x] Delete `spike/` and `.github/workflows/spike.yml`
+- [x] `.gitignore`: `.transcripts/`, `_site/`, `*.mp3`, `__pycache__/`, `.venv/`
+- [x] `internal/clock`: `Format(sec int) string` returns `%02d:%02d:%02d`
       (hours may exceed 99 without truncation); `Parse(s string) (int, error)`
       accepts `H:MM:SS`, `MM:SS` and `SS` via `strings.SplitSeq`, rejects
       empty parts, negatives, minutes or seconds >= 60 when a higher part is
       present
-- [ ] Table tests for both: `0`, `59`, `3600`, `8261` (`02:17:41`),
+- [x] Table tests for both: `0`, `59`, `3600`, `8261` (`02:17:41`),
       `"4:11:14"` = 15074, `"1:02"` = 62, `"7"` = 7, errors on `""`, `"1::2"`,
       `"a:00"`, `"1:60:00"`, round trip `Parse(Format(x)) == x`
-- [ ] Validation commands pass (Go ones; others may not exist yet)
+- [x] Validation commands pass (Go ones; others may not exist yet)
 
 ### Task 2: RSS feed parsing
 
