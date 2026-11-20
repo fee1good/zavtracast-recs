@@ -199,24 +199,24 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
 
 ### Task 6: Site data build and eval
 
-- [ ] `internal/site`: `Row` embeds `record.Record` plus `Episode int`,
+- [x] `internal/site`: `Row` embeds `record.Record` plus `Episode int`,
       `EpisodeTitle`, `Date`, `PageURL`, `AudioURL` (json `episode`,
       `episode_title`, `date`, `page_url`, `audio_url`)
-- [ ] `Rows(eps []record.Episode) []Row` sorted by episode desc, then T asc,
+- [x] `Rows(eps []record.Episode) []Row` sorted by episode desc, then T asc,
       then ID
-- [ ] `Build(siteDir, outDir string, eps []record.Episode, goatcounter string) error`:
+- [x] `Build(siteDir, outDir string, eps []record.Episode, goatcounter string) error`:
       MkdirAll outDir; copy `index.html`, `app.js`, `style.css`; in index.html
       replace the marker `<!--goatcounter-->` with
       `<script data-goatcounter="https://<code>.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>`
       when goatcounter is non-empty, else remove the marker; code must match
       `^[a-z0-9-]+$` or Build fails; write `data.json` as a JSON array of
       Row (`[]` when empty), no HTML escaping
-- [ ] `internal/eval`: `Result{Found, Missed, Extra, VerdictMismatch []string}`;
+- [x] `internal/eval`: `Result{Found, Missed, Extra, VerdictMismatch []string}`;
       `Compare(golden, got []record.Record) Result` keyed by
       `Slug(Title)+"|"+Host`; VerdictMismatch lists keys found in both with
       different verdicts; article records ignored on both sides;
       `(Result) Precision() float64`, `Recall() float64` (0 when undefined)
-- [ ] Tests: Rows ordering across 2 episodes; Build with temp site dir checks
+- [x] Tests: Rows ordering across 2 episodes; Build with temp site dir checks
       copied files, marker replaced / removed, bad code rejected, data.json
       content; Compare with found, missed, extra, mismatch and articles ignored
 
