@@ -113,29 +113,29 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
 
 ### Task 4: Records and episode files
 
-- [ ] `internal/record`:
+- [x] `internal/record`:
       `Record{ID, Title, TitleRU, Type, Host, Verdict, Summary, URL string; T int}`
       json: `id`, `title`, `title_ru,omitzero`, `type`, `host`, `verdict`,
       `summary,omitzero`, `url,omitzero`, `t`
-- [ ] `MediaTypes = []string{"game","movie","series","anime","cartoon","book","comic","other"}`,
+- [x] `MediaTypes = []string{"game","movie","series","anime","cartoon","book","comic","other"}`,
       `const TypeArticle = "article"`, `Verdicts = []string{"positive","mixed","negative"}`,
       `Hosts = []string{"dima","maxim","timur","unknown"}`, `const HostTeam = "team"`
-- [ ] `ValidHost(h string) bool`: one of Hosts, or `guest:<name>` with
+- [x] `ValidHost(h string) bool`: one of Hosts, or `guest:<name>` with
       non-blank name
-- [ ] `(Record) Validate(duration int) error`: type in MediaTypes or article;
+- [x] `(Record) Validate(duration int) error`: type in MediaTypes or article;
       verdict in Verdicts; non-article: host valid, summary non-blank, url
       empty; article: host `team`, url starts with `http`; title non-blank;
       `0 <= T <= duration`
-- [ ] `Slug(s string) string`: lowercase, unicode letters and digits kept,
+- [x] `Slug(s string) string`: lowercase, unicode letters and digits kept,
       everything else becomes `-`, runs collapsed, trimmed of `-`, cut to
       80 runes and re-trimmed. `MakeID(ep int, title, host string)` =
       `<ep>-<Slug(title)>-<Slug(host)>`
-- [ ] `Clean(ep, duration int, recs []Record) (kept []Record, dropped []error)`:
+- [x] `Clean(ep, duration int, recs []Record) (kept []Record, dropped []error)`:
       sets ID via MakeID, drops invalid and duplicate IDs (first wins), each
       drop is an error naming the title and reason; order preserved
-- [ ] `var ErrTooManyInvalid`; `CheckDropped(total, dropped int) error`
+- [x] `var ErrTooManyInvalid`; `CheckDropped(total, dropped int) error`
       returns it when `dropped*3 > total`
-- [ ] Episode file: `Episode{Episode int; Title, Date, PageURL, AudioURL string;
+- [x] Episode file: `Episode{Episode int; Title, Date, PageURL, AudioURL string;
       Duration int; Records []Record}` json `episode`,`title`,`date`
       (`2006-01-02`), `page_url`, `audio_url`, `duration`, `records`;
       `Path(dir, n)`, `Exists(dir, n)`, `Write(dir string, e Episode) error`
@@ -143,7 +143,7 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
       `null`, `SetEscapeHTML(false)`), `Read(dir, n)`,
       `ReadAll(dir) ([]Episode, error)` sorted by episode ascending, missing
       dir = empty result
-- [ ] Tests: Slug on `"The Legend of Zelda: Ocarina of Time"` →
+- [x] Tests: Slug on `"The Legend of Zelda: Ocarina of Time"` →
       `the-legend-of-zelda-ocarina-of-time`, Cyrillic `"Пикник на обочине"` →
       `пикник-на-обочине`, `"guest:Иван"` → `guest-иван`, long input ≤ 80
       runes; Validate table for every rule; Clean with duplicate and invalid;
