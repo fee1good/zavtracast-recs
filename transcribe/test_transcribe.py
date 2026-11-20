@@ -5,6 +5,9 @@ import sys
 import tempfile
 import unittest
 import wave
+from types import SimpleNamespace
+
+import transcribe
 
 SCRIPT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "transcribe.py")
 RATE = 16000
@@ -60,10 +63,46 @@ class TranscribeTest(unittest.TestCase):
         for s in data["segments"]:
             self.assertGreaterEqual(s["start"], 1.0)
 
-    def test_missing_audio_fails(self) -> None:
+    def test_missing_audio_arg_fails(self) -> None:
         res = self.run_script("--episode", "7", "--out", self.out)
         self.assertNotEqual(res.returncode, 0)
         self.assertFalse(os.path.exists(self.out))
+
+    def test_unreadable_audio_fails(self) -> None:
+        junk = os.path.join(self.tmp.name, "junk.mp3")
+        with open(junk, "wb") as f:
+            f.write(b"not audio at all")
+        for audio in (os.path.join(self.tmp.name, "nope.mp3"), junk):
+            res = self.run_script(
+                "--audio", audio, "--episode", "7", "--out", self.out, "--model", "tiny",
+            )
+            self.assertNotEqual(res.returncode, 0, audio)
+            self.assertFalse(os.path.exists(self.out), audio)
+            self.assertFalse(os.path.exists(self.out + ".tmp"), audio)
+
+
+class ShiftSegmentsTest(unittest.TestCase):
+    def test_offsets_rounds_and_strips(self) -> None:
+        segs = [
+            SimpleNamespace(start=0.0, end=2.004, text="  привет "),
+            SimpleNamespace(start=10.1234, end=12.5, text="мир"),
+        ]
+        got = transcribe.shift_segments(segs, 60.0, 120.0)
+        self.assertEqual(
+            got,
+            [
+                {"start": 60.0, "end": 62.0, "text": "привет"},
+                {"start": 70.12, "end": 72.5, "text": "мир"},
+            ],
+        )
+
+    def test_no_start(self) -> None:
+        segs = [SimpleNamespace(start=1.5, end=3.25, text="a")]
+        got = transcribe.shift_segments(segs, 0.0, 10.0)
+        self.assertEqual(got, [{"start": 1.5, "end": 3.25, "text": "a"}])
+
+    def test_empty(self) -> None:
+        self.assertEqual(transcribe.shift_segments([], 5.0, 10.0), [])
 
 
 if __name__ == "__main__":

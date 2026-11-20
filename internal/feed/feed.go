@@ -8,6 +8,7 @@ import (
 	"html"
 	"io"
 	"net/http"
+	"net/url"
 	"regexp"
 	"slices"
 	"strconv"
@@ -102,8 +103,8 @@ func toEpisode(it item, title, num string) (Episode, error) {
 		Number:      n,
 		Title:       title,
 		Date:        date,
-		PageURL:     strings.TrimSpace(it.Link),
-		AudioURL:    strings.TrimSpace(it.Enclosure.URL),
+		PageURL:     httpURL(it.Link),
+		AudioURL:    httpURL(it.Enclosure.URL),
 		Duration:    dur,
 		Shownotes:   notes,
 		Impressions: impressions(notes),
@@ -111,12 +112,26 @@ func toEpisode(it item, title, num string) (Episode, error) {
 	}, nil
 }
 
+func httpURL(s string) string {
+	s = strings.TrimSpace(s)
+	u, err := url.Parse(s)
+	if err != nil || (u.Scheme != "http" && u.Scheme != "https") || u.Host == "" {
+		return ""
+	}
+	return s
+}
+
 func listAfter(src, keyword string) string {
-	for _, loc := range headingRe.FindAllStringSubmatchIndex(src, -1) {
+	headings := headingRe.FindAllStringSubmatchIndex(src, -1)
+	for i, loc := range headings {
 		if !strings.Contains(text(src[loc[2]:loc[3]]), keyword) {
 			continue
 		}
-		rest := src[loc[1]:]
+		end := len(src)
+		if i+1 < len(headings) {
+			end = headings[i+1][0]
+		}
+		rest := src[loc[1]:end]
 		start := strings.Index(rest, "<ol")
 		if start < 0 {
 			return ""
@@ -178,10 +193,10 @@ func articles(content string) []Article {
 	return out
 }
 
-func Fetch(ctx context.Context, url string) ([]Episode, error) {
+func Fetch(ctx context.Context, rawURL string) ([]Episode, error) {
 	ctx, cancel := context.WithTimeout(ctx, 60*time.Second)
 	defer cancel()
-	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, rawURL, nil)
 	if err != nil {
 		return nil, fmt.Errorf("build request: %w", err)
 	}

@@ -50,9 +50,17 @@ func (g *Gemini) Generate(ctx context.Context, system, user string) (string, err
 		slog.Info("gemini usage", "model", g.model, "in", u.PromptTokenCount,
 			"out", u.CandidatesTokenCount+u.ThoughtsTokenCount)
 	}
+	return replyText(resp)
+}
+
+func replyText(resp *genai.GenerateContentResponse) (string, error) {
 	text := resp.Text()
 	if text == "" {
 		return "", fmt.Errorf("empty reply: %s", emptyReason(resp))
+	}
+	if len(resp.Candidates) > 0 && resp.Candidates[0] != nil &&
+		resp.Candidates[0].FinishReason == genai.FinishReasonMaxTokens {
+		return "", fmt.Errorf("truncated reply: finish_reason=%s", genai.FinishReasonMaxTokens)
 	}
 	return text, nil
 }

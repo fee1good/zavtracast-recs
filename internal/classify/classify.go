@@ -162,7 +162,7 @@ func (c Classifier) once(ctx context.Context, user string) ([]record.Record, err
 }
 
 func (rr ReplyRecord) toRecord() record.Record {
-	t, err := clock.Parse(strings.TrimSpace(rr.Time))
+	t, err := clock.Parse(strings.Trim(rr.Time, "[] \t\n"))
 	if err != nil {
 		t = -1
 	}

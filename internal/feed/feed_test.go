@@ -123,6 +123,55 @@ func TestParseHTML(t *testing.T) {
 	}
 }
 
+func TestParseListBoundedByHeading(t *testing.T) {
+	content := `<h2>Шоуноты</h2>
+<ul><li>Дима про список без нумерации</li></ul>
+<h3>Самые интересные материалы недели</h3>
+<p>пусто</p>
+<h3>Прочее</h3>
+<ol><li>Чужой – <a href="https://c.example/">https://c.example/</a></li></ol>`
+	feed := `<rss xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel>
+<item><title>Завтракаст 8</title><pubDate>Mon, 02 Jan 2006 15:04:05 +0000</pubDate>
+<content:encoded><![CDATA[` + content + `]]></content:encoded></item>
+</channel></rss>`
+	eps, err := Parse(strings.NewReader(feed))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(eps) != 1 {
+		t.Fatalf("episodes = %d, want 1", len(eps))
+	}
+	if e := eps[0]; len(e.Shownotes) != 0 || len(e.Articles) != 0 {
+		t.Errorf("shownotes = %q, articles = %q, want none", e.Shownotes, e.Articles)
+	}
+}
+
+func TestParseKeepsOnlyHTTPURLs(t *testing.T) {
+	item := func(n, link, audio string) string {
+		return `<item><title>Завтракаст ` + n + `</title>` +
+			`<pubDate>Mon, 02 Jan 2006 15:04:05 +0000</pubDate>` +
+			`<link>` + link + `</link><enclosure url="` + audio + `"/></item>`
+	}
+	feed := `<rss><channel>` +
+		item("1", " https://zavtracast.ru/1.html ", "http://media.example/1.mp3") +
+		item("2", "javascript:alert(1)", "data:audio/mp3;base64,AA") +
+		`</channel></rss>`
+	eps, err := Parse(strings.NewReader(feed))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(eps) != 2 {
+		t.Fatalf("episodes = %d, want 2", len(eps))
+	}
+	if eps[0].PageURL != "https://zavtracast.ru/1.html" ||
+		eps[0].AudioURL != "http://media.example/1.mp3" {
+		t.Errorf("1 urls = %q %q", eps[0].PageURL, eps[0].AudioURL)
+	}
+	if eps[1].PageURL != "" || eps[1].AudioURL != "" {
+		t.Errorf("2 urls = %q %q, want empty", eps[1].PageURL, eps[1].AudioURL)
+	}
+}
+
 func TestParseErrors(t *testing.T) {
 	wrap := func(body string) string {
 		return `<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel>` +

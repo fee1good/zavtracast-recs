@@ -92,7 +92,9 @@ function card(row) {
   }
 
   const links = el("div", "links");
-  links.append(link(row.page_url, "Выпуск " + row.episode, true));
+  if (row.page_url) {
+    links.append(link(row.page_url, "Выпуск " + row.episode, true));
+  }
   if (row.type === "article") {
     if (row.url) {
       links.append(link(row.url, "Открыть", true));

@@ -129,7 +129,7 @@ func TestDiscover(t *testing.T) {
 
 func TestWriteMatrix(t *testing.T) {
 	var buf bytes.Buffer
-	if err := writeMatrix(&buf, nil); err != nil {
+	if err := writeMatrix(&buf, []job{}); err != nil {
 		t.Fatal(err)
 	}
 	if got := buf.String(); got != "matrix=[]\ncount=0\n" {
@@ -397,5 +397,84 @@ func TestEvaluate(t *testing.T) {
 		"total: found 2 missed 1 extra 1 verdict 1 precision 0.67 recall 0.67\n"
 	if got := buf.String(); got != want {
 		t.Errorf("output =\n%s\nwant\n%s", got, want)
+	}
+}
+
+func TestClassifyDurationFromTranscript(t *testing.T) {
+	eps := fixtureEpisodes(t)
+	eps[1].Duration = 0
+	o := testOptions(t)
+	o.episode = 395
+	tr := transcript.Transcript{Episode: 395, Model: "tiny", Duration: 99.2}
+	b, err := json.Marshal(tr)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := os.MkdirAll(o.transcripts, 0o755); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(transcript.Path(o.transcripts, 395), b, 0o644); err != nil {
+		t.Fatal(err)
+	}
+	var calls []int
+	cl := classifier(map[int]string{395: goodReply}, &calls)
+	if err := classifyEpisodes(t.Context(), eps, o, cl); err != nil {
+		t.Fatal(err)
+	}
+	e, err := record.Read(o.data, 395)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if e.Duration != 100 || len(e.Records) != 2 {
+		t.Errorf("duration = %d, records = %d, want 100 and 2", e.Duration, len(e.Records))
+	}
+}
+
+func TestClassifyCancelled(t *testing.T) {
+	eps := fixtureEpisodes(t)
+	o := testOptions(t)
+	writeTranscript(t, o.transcripts, 394)
+	writeTranscript(t, o.transcripts, 395)
+	ctx, cancel := context.WithCancel(t.Context())
+	cancel()
+	var calls []int
+	cl := classifier(map[int]string{394: goodReply, 395: goodReply}, &calls)
+	if err := classifyEpisodes(ctx, eps, o, cl); !errors.Is(err, context.Canceled) {
+		t.Fatalf("err = %v, want context.Canceled", err)
+	}
+	if len(calls) != 0 {
+		t.Errorf("calls = %v, want none", calls)
+	}
+}
+
+func TestRunClassifyWithoutKey(t *testing.T) {
+	t.Setenv("GEMINI_API_KEY", "")
+	err := run(t.Context(), []string{"classify", "-feed", "/nonexistent.xml"}, &bytes.Buffer{})
+	if err == nil || !strings.Contains(err.Error(), "GEMINI_API_KEY") {
+		t.Fatalf("err = %v, want missing key error", err)
+	}
+}
+
+func TestRunBuildRealSite(t *testing.T) {
+	dir := t.TempDir()
+	data := filepath.Join(dir, "data")
+	out := filepath.Join(dir, "out")
+	writeData(t, data, 395)
+	args := []string{"build", "-site", "../../site", "-data", data, "-out", out,
+		"-goatcounter", "abc"}
+	if err := run(t.Context(), args, &bytes.Buffer{}); err != nil {
+		t.Fatal(err)
+	}
+	b, err := os.ReadFile(filepath.Join(out, "index.html"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !strings.Contains(string(b), `data-goatcounter="https://abc.goatcounter.com/count"`) {
+		t.Error("goatcounter snippet missing from index.html")
+	}
+	for _, name := range []string{"app.js", "style.css", "data.json"} {
+		if _, err := os.Stat(filepath.Join(out, name)); err != nil {
+			t.Error(err)
+		}
 	}
 }

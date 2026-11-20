@@ -49,9 +49,6 @@ func discover(eps []feed.Episode, o options) ([]job, error) {
 }
 
 func writeMatrix(w io.Writer, jobs []job) error {
-	if jobs == nil {
-		jobs = []job{}
-	}
 	var buf bytes.Buffer
 	enc := json.NewEncoder(&buf)
 	enc.SetEscapeHTML(false)

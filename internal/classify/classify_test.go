@@ -39,7 +39,7 @@ const happyReply = `{"records":[
 {"title":"The Legend of Zelda: Ocarina of Time","title_ru":null,"type":"game",
 "host":"maxim","verdict":"positive","summary":"Перепрошёл на эмуляторе.","time":"01:30:12"},
 {"title":"Roadside Picnic","title_ru":"Пикник на обочине","type":"book",
-"host":"dima","verdict":"mixed","summary":"Местами затянуто.","time":"0:05"},
+"host":"dima","verdict":"mixed","summary":"Местами затянуто.","time":"[0:05]"},
 {"title":"Bad Time","title_ru":"Bad Time","type":"movie",
 "host":"timur","verdict":"negative","summary":"Скучно.","time":"когда-то"}
 ]}`
@@ -276,5 +276,59 @@ func TestSchema(t *testing.T) {
 	}
 	if n := rec.Properties["title_ru"].Nullable; n == nil || !*n {
 		t.Error("title_ru not nullable")
+	}
+}
+
+func TestReplyText(t *testing.T) {
+	cand := func(text string, reason genai.FinishReason) *genai.Candidate {
+		return &genai.Candidate{
+			Content:      genai.NewContentFromText(text, genai.RoleModel),
+			FinishReason: reason,
+		}
+	}
+	tests := map[string]struct {
+		resp    *genai.GenerateContentResponse
+		want    string
+		wantErr string
+	}{
+		"ok": {
+			resp: &genai.GenerateContentResponse{
+				Candidates: []*genai.Candidate{cand(`{"records":[]}`, genai.FinishReasonStop)},
+			},
+			want: `{"records":[]}`,
+		},
+		"no candidates": {
+			resp:    &genai.GenerateContentResponse{},
+			wantErr: "empty reply: finish_reason=none",
+		},
+		"blocked": {
+			resp: &genai.GenerateContentResponse{
+				Candidates: []*genai.Candidate{{FinishReason: genai.FinishReasonSafety}},
+				PromptFeedback: &genai.GenerateContentResponsePromptFeedback{
+					BlockReason: genai.BlockedReasonSafety,
+				},
+			},
+			wantErr: "empty reply: finish_reason=SAFETY block_reason=SAFETY",
+		},
+		"truncated": {
+			resp: &genai.GenerateContentResponse{
+				Candidates: []*genai.Candidate{cand(`{"records":[{"ti`, genai.FinishReasonMaxTokens)},
+			},
+			wantErr: "truncated reply: finish_reason=MAX_TOKENS",
+		},
+	}
+	for name, tt := range tests {
+		t.Run(name, func(t *testing.T) {
+			got, err := replyText(tt.resp)
+			if tt.wantErr != "" {
+				if err == nil || err.Error() != tt.wantErr {
+					t.Fatalf("err = %v, want %q", err, tt.wantErr)
+				}
+				return
+			}
+			if err != nil || got != tt.want {
+				t.Fatalf("got %q, %v", got, err)
+			}
+		})
 	}
 }

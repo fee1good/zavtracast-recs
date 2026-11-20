@@ -10,7 +10,7 @@ SAMPLE_RATE = 16000
 PROGRESS_EVERY = 600.0
 
 
-def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="transcribe an episode with faster-whisper")
     p.add_argument("--audio", required=True)
     p.add_argument("--episode", type=int, required=True)
@@ -19,7 +19,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p.add_argument("--beam", type=int, default=5)
     p.add_argument("--threads", type=int, default=4)
     p.add_argument("--start", type=float, default=0.0)
-    return p.parse_args(argv)
+    return p.parse_args()
 
 
 def transcribe(args: argparse.Namespace) -> dict:
@@ -35,6 +35,15 @@ def transcribe(args: argparse.Namespace) -> dict:
         audio, language="ru", beam_size=args.beam, vad_filter=True
     )
 
+    return {
+        "episode": args.episode,
+        "model": args.model,
+        "duration": round(duration, 2),
+        "segments": shift_segments(segments, start, duration),
+    }
+
+
+def shift_segments(segments, start: float, duration: float) -> list[dict]:
     t0 = time.monotonic()
     next_mark = start + PROGRESS_EVERY
     out = []
@@ -56,13 +65,7 @@ def transcribe(args: argparse.Namespace) -> dict:
                 flush=True,
             )
             next_mark = (seg_end // PROGRESS_EVERY + 1) * PROGRESS_EVERY
-
-    return {
-        "episode": args.episode,
-        "model": args.model,
-        "duration": round(duration, 2),
-        "segments": out,
-    }
+    return out
 
 
 def write_json(path: str, data: dict) -> None:
@@ -73,8 +76,8 @@ def write_json(path: str, data: dict) -> None:
     os.replace(tmp, path)
 
 
-def main(argv: list[str] | None = None) -> int:
-    args = parse_args(argv)
+def main() -> int:
+    args = parse_args()
     write_json(args.out, transcribe(args))
     return 0
 

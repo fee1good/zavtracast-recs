@@ -157,3 +157,18 @@ func TestBuildMissingSiteFile(t *testing.T) {
 		t.Error("no error for missing site files")
 	}
 }
+
+func TestAppKnowsAllTypes(t *testing.T) {
+	b, err := os.ReadFile("../../site/app.js")
+	if err != nil {
+		t.Fatal(err)
+	}
+	src := string(b)
+	keys := append(slices.Clone(record.MediaTypes), record.TypeArticle, record.HostTeam)
+	keys = append(keys, record.Verdicts...)
+	for _, k := range keys {
+		if !strings.Contains(src, "\n  "+k+": ") {
+			t.Errorf("site/app.js has no label for %q", k)
+		}
+	}
+}

@@ -25,7 +25,17 @@ Gemini, который выделяет рекомендации ведущих,
   `data/episodes`;
 - `publish`: собирает сайт и деплоит его в GitHub Pages.
 
+Кроме расписания, workflow запускается вручную и при пуше в `main`
+изменений в `site/`. Обрабатываются выпуски начиная с `MIN_EPISODE`
+(386, задаётся в `update.yml`); чтобы догнать архив, уменьшите это
+значение. Если извлечение для какого-то выпуска упало, остальные выпуски
+всё равно сохраняются, сайт публикуется с уже имеющимися данными, а
+workflow завершается с ошибкой.
+
 ## Локальный запуск
+
+Нужны Go 1.26+, а для транскрибатора Python 3.12 и
+[uv](https://docs.astral.sh/uv/). ffmpeg не нужен: аудио декодирует PyAV.
 
 ```sh
 go test ./...
@@ -34,8 +44,45 @@ go run ./cmd/recs build -out _site
 go run ./cmd/recs eval -golden eval/golden
 ```
 
+Общие флаги `discover` и `classify`:
+
+| Флаг | По умолчанию | Зачем |
+| --- | --- | --- |
+| `-feed` | лента подкаста | URL ленты или путь к локальному файлу (всё, что не начинается с `http`) |
+| `-data` | `data/episodes` | папка с файлами выпусков |
+| `-transcripts` | `.transcripts` | папка с транскриптами |
+| `-min` | `386` | первый обрабатываемый выпуск |
+| `-episode` | `0` | обработать только этот выпуск; файл данных перезаписывается |
+
 `classify` требует переменную окружения `GEMINI_API_KEY` и транскрипты в
-`.transcripts/`.
+`.transcripts/`. Модель задаёт флаг `-model`; по умолчанию берётся
+`RECS_GEMINI_MODEL`, а если она не задана, `gemini-3.6-flash`.
+
+`build` собирает сайт из `-data`: флаги `-site` (исходники, `site`),
+`-out` (результат, `_site`) и `-goatcounter` (код счётчика, без него
+счётчик не вставляется).
+
+Транскрибировать выпуск локально:
+
+```sh
+uv run --python 3.12 --with-requirements transcribe/requirements.txt \
+  python transcribe/transcribe.py --audio episode.mp3 --episode 395 \
+  --out .transcripts/395.json
+```
+
+Флаги: `--model` (`large-v3-turbo`), `--beam` (5), `--threads` (4) и
+`--start <сек>`, который пропускает начало выпуска. Таймкоды при этом
+всё равно считаются от начала файла. Результат: JSON с полями `episode`,
+`model`, `duration` и `segments` (`start`, `end`, `text`).
+
+### Оценка качества
+
+`eval/golden/<N>.json` — исправленные вручную копии
+`data/episodes/<N>.json`. `recs eval` сравнивает их с текущими данными
+по паре «название, ведущий», статьи не учитывает. Команда печатает
+найденные, пропущенные и лишние записи, расхождения вердикта, а также
+итоговые precision и recall. В CI не запускается, её гоняют при правке
+промпта.
 
 Тесты транскрибатора:
 
@@ -43,6 +90,15 @@ go run ./cmd/recs eval -golden eval/golden
 uv run --python 3.12 --with-requirements transcribe/requirements.txt \
   python -m unittest discover -s transcribe -v
 ```
+
+## Первая настройка
+
+1. Создать приватный репозиторий `fee1good/zavtracast-recs-transcripts`
+   с начальным коммитом, например с пустым README: checkout пустого
+   репозитория падает.
+2. Settings → Pages → Source: GitHub Actions.
+3. Завести секреты и переменные из таблиц ниже.
+4. Запустить `update` вручную: Actions → `update` → Run workflow.
 
 ## Секреты и переменные
 
