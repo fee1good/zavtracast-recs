@@ -255,7 +255,7 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
 
 ### Task 8: Transcriber
 
-- [ ] `transcribe/requirements.txt` with exactly:
+- [x] `transcribe/requirements.txt` with exactly:
       `anyio==4.16.0 av==18.1.0 click==8.5.1 ctranslate2==4.9.0
       faster-whisper==1.2.1 filelock==4.2.12 flatbuffers==25.12.19
       fsspec==2026.9.0 h11==0.16.0 hf-xet==1.8.0 httpcore2==2.16.2
@@ -263,20 +263,20 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
       onnxruntime==1.32.0 packaging==26.3 protobuf==7.36.2 pyyaml==6.0.3
       tokenizers==0.23.3 tqdm==4.70.1 truststore==0.10.5
       typing-extensions==4.16.0` (one per line)
-- [ ] `transcribe/transcribe.py`, argparse: `--audio` (required),
+- [x] `transcribe/transcribe.py`, argparse: `--audio` (required),
       `--episode` (int, required), `--out` (required), `--model
       large-v3-turbo`, `--beam 5`, `--threads 4`, `--start 0.0`
-- [ ] Load audio with `faster_whisper.decode_audio(path, sampling_rate=16000)`,
+- [x] Load audio with `faster_whisper.decode_audio(path, sampling_rate=16000)`,
       duration = `len(audio)/16000`, slice off the first `start` seconds,
       transcribe the array with `WhisperModel(model, device="cpu",
       compute_type="int8", cpu_threads=threads)` and `language="ru",
       beam_size=beam, vad_filter=True`; add `start` back to segment times
-- [ ] Progress to stderr every 10 minutes of audio processed:
+- [x] Progress to stderr every 10 minutes of audio processed:
       `progress <pos>/<duration> s, elapsed <s> s`
-- [ ] Write `{episode, model, duration, segments:[{start,end,text}]}`
+- [x] Write `{episode, model, duration, segments:[{start,end,text}]}`
       (times rounded to 2 decimals, text stripped, `ensure_ascii=False`) to
       `<out>.tmp`, then `os.replace` to `out`
-- [ ] `transcribe/test_transcribe.py` (unittest): build a 3 s silent 16 kHz
+- [x] `transcribe/test_transcribe.py` (unittest): build a 3 s silent 16 kHz
       mono wav with the `wave` module in a temp dir, run the script via
       `subprocess` with `sys.executable`, `--model tiny --beam 1`; assert
       exit 0, JSON keys, episode, model `tiny`, duration ≈ 3.0, segments is a
