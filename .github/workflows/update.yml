@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           repository: fee1good/zavtracast-recs-transcripts
-          token: ${{ secrets.TRANSCRIPTS_TOKEN }}
+          ssh-key: ${{ secrets.TRANSCRIPTS_DEPLOY_KEY }}
           path: .transcripts
       - uses: actions/setup-go@v7
         with:
@@ -94,7 +94,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           repository: fee1good/zavtracast-recs-transcripts
-          token: ${{ secrets.TRANSCRIPTS_TOKEN }}
+          ssh-key: ${{ secrets.TRANSCRIPTS_DEPLOY_KEY }}
           path: .transcripts
       - uses: actions/download-artifact@v8
         continue-on-error: true

@@ -107,7 +107,7 @@ uv run --python 3.12 --with-requirements transcribe/requirements.txt \
 | Имя | Зачем |
 | --- | --- |
 | `GEMINI_API_KEY` | ключ Gemini API для извлечения рекомендаций |
-| `TRANSCRIPTS_TOKEN` | fine-grained PAT с правом Contents read/write на `zavtracast-recs-transcripts` |
+| `TRANSCRIPTS_DEPLOY_KEY` | приватная часть SSH deploy key с правом записи на `zavtracast-recs-transcripts` |
 
 Переменные репозитория:
 
