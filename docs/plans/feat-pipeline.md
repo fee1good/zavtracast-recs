@@ -58,12 +58,12 @@ This plan wins where the two differ.
 Fixture `internal/feed/testdata/feed.xml` is a trimmed real feed with
 items «Завтракаст 395», «Завтракаст 394» and «Магнитное поле №14».
 
-- [ ] `internal/feed`: `const URL = "https://feeds.podcastmirror.com/zavtracast"`
-- [ ] Types:
+- [x] `internal/feed`: `const URL = "https://feeds.podcastmirror.com/zavtracast"`
+- [x] Types:
       `Article{Title, URL string}`;
       `Episode{Number int; Title string; Date time.Time; PageURL, AudioURL string;
       Duration int; Shownotes, Impressions []string; Articles []Article}`
-- [ ] `Parse(r io.Reader) ([]Episode, error)` with `encoding/xml`:
+- [x] `Parse(r io.Reader) ([]Episode, error)` with `encoding/xml`:
       `title`, `link` (PageURL), `pubDate` (RFC1123Z),
       `enclosure` `url,attr` (AudioURL),
       `xml:"http://www.itunes.com/dtds/podcast-1.0.dtd duration"` parsed with
@@ -71,19 +71,19 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
       `xml:"http://purl.org/rss/1.0/modules/content/ encoded"` as HTML source.
       Keep only items whose title matches `^Завтракаст (\d+)\b`; Number from
       the match. Result sorted by Number ascending
-- [ ] Shownotes: in `content:encoded` find the heading containing «Шоуноты»,
+- [x] Shownotes: in `content:encoded` find the heading containing «Шоуноты»,
       take the first `<ol>` after it up to its `</ol>`, extract `<li>` items
       with `(?s)<li[^>]*>(.*?)</li>`; text = tags stripped,
       `html.UnescapeString`, whitespace collapsed, trimmed; skip empty
-- [ ] Impressions: shownote items matching `^(Дима|Максим|Макс|Тимур)[\s,]`
-- [ ] Articles: heading containing «материалы недели» (both «Самые интересные
+- [x] Impressions: shownote items matching `^(Дима|Максим|Макс|Тимур)[\s,]`
+- [x] Articles: heading containing «материалы недели» (both «Самые интересные
       материалы недели» and «Лучшие материалы недели»), first `<ol>` after it;
       per `<li>`: URL = first `href` value, HTML-unescaped; Title = li text
       with tags and bare `http(s)://` URLs removed, trimmed, trailing `:` `-`
       `–` stripped; skip items without URL or title
-- [ ] `Fetch(ctx context.Context, url string) ([]Episode, error)`: GET with
+- [x] `Fetch(ctx context.Context, url string) ([]Episode, error)`: GET with
       60 s timeout, non-2xx is an error, then `Parse`
-- [ ] Tests on the fixture:
+- [x] Tests on the fixture:
       2 episodes (394, 395), Магнитное поле excluded;
       395: Duration 8261, PageURL `https://zavtracast.ru/395.html`,
       Date `2026-11-11 17:25:38 +0000`, 8 shownotes, 3 impressions, the last
@@ -93,7 +93,7 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
       «Дима про Steam Controller.», 1 article
       `{«Как американцы нашли русский город на Аляске»,
       "https://youtu.be/TMQ31DQjjWg?is=KMn2Gib7v4dC4wpH"}`
-- [ ] `Fetch` test with `httptest.Server` serving the fixture and one
+- [x] `Fetch` test with `httptest.Server` serving the fixture and one
       returning 500
 
 ### Task 3: Transcript files
