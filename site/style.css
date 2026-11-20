@@ -172,6 +172,34 @@ header h1 {
   font-size: 0.95rem;
 }
 
+.crumbs {
+  margin: 16px 0 0;
+  font-size: 0.9rem;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.episodes {
+  margin-top: 32px;
+}
+
+.episodes h2 {
+  font-size: 1.2rem;
+  margin: 0 0 8px;
+}
+
+.episodes ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.episodes li {
+  margin: 4px 0;
+}
+
 footer {
   margin-top: 32px;
   padding-top: 16px;

@@ -86,7 +86,13 @@ func run(ctx context.Context, args []string, stdout io.Writer) error {
 	case "build":
 		siteDir := fs.String("site", "site", "site sources dir")
 		out := fs.String("out", "_site", "output dir")
-		gc := fs.String("goatcounter", "", "goatcounter code")
+		var so site.Options
+		fs.StringVar(&so.BaseURL, "base", site.DefaultBaseURL, "public site url")
+		fs.StringVar(&so.Goatcounter, "goatcounter", "", "goatcounter code")
+		fs.StringVar(&so.GoogleVerification, "google-verification", "",
+			"google search console token")
+		fs.StringVar(&so.YandexVerification, "yandex-verification", "",
+			"yandex webmaster token")
 		if err := fs.Parse(rest); err != nil {
 			return err
 		}
@@ -94,7 +100,7 @@ func run(ctx context.Context, args []string, stdout io.Writer) error {
 		if err != nil {
 			return err
 		}
-		if err := site.Build(*siteDir, *out, eps, *gc); err != nil {
+		if err := site.Build(*siteDir, *out, eps, so); err != nil {
 			return err
 		}
 		slog.Info("site built", "out", *out, "episodes", len(eps))
