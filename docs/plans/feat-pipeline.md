@@ -315,25 +315,25 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
 
 ### Task 10: Workflows
 
-- [ ] `.github/workflows/ci.yml`: on `push` and `pull_request`; job `go`:
+- [x] `.github/workflows/ci.yml`: on `push` and `pull_request`; job `go`:
       checkout, setup-go (`go-version-file: go.mod`), `go vet ./...`,
       gofmt check, `go test -race ./...`; job `python`: checkout,
       setup-python 3.12 with pip cache on `transcribe/requirements.txt`,
       `pip install -r transcribe/requirements.txt`,
       `python -m unittest discover -s transcribe -v`;
       `permissions: contents: read`
-- [ ] `.github/workflows/update.yml`:
+- [x] `.github/workflows/update.yml`:
       triggers `schedule: cron "0 6 * * *"`, `workflow_dispatch` with input
       `episode` (string, default empty), `push` on `main` with paths
       `site/**`; `concurrency: {group: update, cancel-in-progress: false}`;
       `env: MIN_EPISODE: "386"`; top-level `permissions: contents: read`
-- [ ] Job `discover`: checkout; checkout
+- [x] Job `discover`: checkout; checkout
       `fee1good/zavtracast-recs-transcripts` with `token:
       ${{ secrets.TRANSCRIPTS_TOKEN }}` into `.transcripts`; setup-go;
       step id `d`: `go run ./cmd/recs discover -min "$MIN_EPISODE" -episode
       "$EPISODE" >> "$GITHUB_OUTPUT"` with `EPISODE: ${{ inputs.episode || '0' }}`;
       outputs `matrix`, `count`
-- [ ] Job `transcribe`: `needs: discover`, `if: needs.discover.outputs.count != '0'`,
+- [x] Job `transcribe`: `needs: discover`, `if: needs.discover.outputs.count != '0'`,
       `timeout-minutes: 350`, `strategy: {fail-fast: false, max-parallel: 5,
       matrix: {include: ${{ fromJSON(needs.discover.outputs.matrix) }}}}`;
       steps: checkout, setup-python 3.12 with pip cache, pip install,
@@ -342,7 +342,7 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
       `curl -fsSL --retry 3 -o episode.mp3 "$AUDIO_URL"`, run
       `transcribe.py --audio episode.mp3 --episode "$EPISODE" --out "$EPISODE.json"`,
       upload-artifact `transcript-<episode>` with `retention-days: 7`
-- [ ] Job `classify`: `needs: [discover, transcribe]`,
+- [x] Job `classify`: `needs: [discover, transcribe]`,
       `if: always() && needs.discover.result == 'success'`,
       `permissions: contents: write`; steps: checkout `ref: main`; checkout
       transcripts repo into `.transcripts` with the token; download-artifact
@@ -356,7 +356,7 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
       `data/episodes` if changed with message `chore(data): update episodes`,
       `git pull --rebase` then push; final step
       `if: steps.classify.outcome == 'failure'` runs `exit 1`
-- [ ] Job `publish`: `needs: [discover, classify]`,
+- [x] Job `publish`: `needs: [discover, classify]`,
       `if: always() && needs.discover.result == 'success'`, permissions
       `pages: write`, `id-token: write`, `contents: read`, `environment:
       {name: github-pages, url: ${{ steps.deploy.outputs.page_url }}}`;
@@ -364,7 +364,7 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
       `recs build -out _site -goatcounter "$GOATCOUNTER_CODE"` with
       `GOATCOUNTER_CODE: ${{ vars.GOATCOUNTER_CODE }}`, upload-pages-artifact
       `path: _site`, deploy-pages id `deploy`
-- [ ] actionlint passes on both workflows
+- [x] actionlint passes on both workflows
 
 ### Task 11: README
 
