@@ -98,17 +98,17 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
 
 ### Task 3: Transcript files
 
-- [ ] `internal/transcript`:
+- [x] `internal/transcript`:
       `Segment{Start, End float64; Text string}` (json `start`,`end`,`text`),
       `Transcript{Episode int; Model string; Duration float64; Segments []Segment}`
       (json `episode`,`model`,`duration`,`segments`) matching the output of
       `transcribe.py`
-- [ ] `Path(dir string, n int) string` = `<dir>/<n>.json`;
+- [x] `Path(dir string, n int) string` = `<dir>/<n>.json`;
       `Exists(dir, n) bool`; `Load(dir, n) (Transcript, error)`
-- [ ] `(Transcript) Lines() string`: one line per segment
+- [x] `(Transcript) Lines() string`: one line per segment
       `[HH:MM:SS] text\n` using `clock.Format(int(Start))`, text trimmed,
       empty texts skipped
-- [ ] Tests: load from `t.TempDir()`, `Exists` true/false, `Lines` output
+- [x] Tests: load from `t.TempDir()`, `Exists` true/false, `Lines` output
       for 3 segments incl. one empty
 
 ### Task 4: Records and episode files
