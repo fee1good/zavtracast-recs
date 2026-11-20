@@ -368,7 +368,7 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
 
 ### Task 11: README
 
-- [ ] `README.md` in Russian, short: what the site is (link
+- [x] `README.md` in Russian, short: what the site is (link
       `https://fee1good.github.io/zavtracast-recs/`), how the pipeline works
       (one paragraph + the job list), local commands (`go test ./...`,
       `go run ./cmd/recs discover -feed internal/feed/testdata/feed.xml`,
