@@ -63,6 +63,12 @@ class TranscribeTest(unittest.TestCase):
         for s in data["segments"]:
             self.assertGreaterEqual(s["start"], 1.0)
 
+    def test_small_chunks(self) -> None:
+        data = self.transcribe("--start", "1", "--chunk", "0.7")
+        self.assertAlmostEqual(data["duration"], 3.0, delta=0.05)
+        starts = [s["start"] for s in data["segments"]]
+        self.assertEqual(starts, sorted(starts))
+
     def test_missing_audio_arg_fails(self) -> None:
         res = self.run_script("--episode", "7", "--out", self.out)
         self.assertNotEqual(res.returncode, 0)
@@ -79,6 +85,30 @@ class TranscribeTest(unittest.TestCase):
             self.assertNotEqual(res.returncode, 0, audio)
             self.assertFalse(os.path.exists(self.out), audio)
             self.assertFalse(os.path.exists(self.out + ".tmp"), audio)
+
+
+class WindowsTest(unittest.TestCase):
+    def test_splits_evenly_with_tail(self) -> None:
+        self.assertEqual(
+            transcribe.windows(0.0, 2500.0, 1200.0),
+            [(0.0, 1200.0), (1200.0, 2400.0), (2400.0, 2500.0)],
+        )
+
+    def test_start_offset(self) -> None:
+        self.assertEqual(
+            transcribe.windows(1000.0, 2500.0, 1200.0),
+            [(1000.0, 2200.0), (2200.0, 2500.0)],
+        )
+
+    def test_negative_start_clamped(self) -> None:
+        self.assertEqual(transcribe.windows(-5.0, 10.0, 20.0), [(0.0, 10.0)])
+
+    def test_start_past_end(self) -> None:
+        self.assertEqual(transcribe.windows(30.0, 10.0, 20.0), [])
+
+    def test_bad_chunk(self) -> None:
+        with self.assertRaises(ValueError):
+            transcribe.windows(0.0, 10.0, 0.0)
 
 
 class ShiftSegmentsTest(unittest.TestCase):
