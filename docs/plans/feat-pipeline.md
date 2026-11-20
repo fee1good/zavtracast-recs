@@ -285,7 +285,7 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
 
 ### Task 9: Static site
 
-- [ ] `site/index.html`: `lang="ru"`, title «Рекомендации Завтракаста»,
+- [x] `site/index.html`: `lang="ru"`, title «Рекомендации Завтракаста»,
       viewport meta, links `style.css`, `app.js` (defer), `<!--goatcounter-->`
       marker in head; header with title and one-line description; controls:
       search input, selects for type, host, verdict (default «positive»),
@@ -293,7 +293,7 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
       проект, не связан с авторами подкаста. Записи извлечены автоматически и
       могут содержать ошибки.» with link to
       `https://github.com/fee1good/zavtracast-recs` and to `https://zavtracast.ru`
-- [ ] `site/app.js` (vanilla, no deps): fetch `data.json`; fill episode and
+- [x] `site/app.js` (vanilla, no deps): fetch `data.json`; fill episode and
       host selects from data; labels: types (game Игра, movie Фильм, series
       Сериал, anime Аниме, cartoon Мультфильм, book Книга, comic Комикс, other
       Другое, article Статья), hosts (dima Дима, maxim Максим, timur Тимур,
@@ -305,10 +305,10 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
       «Открыть» to url (`rel="noopener"`, `target="_blank"`); build DOM with
       `textContent` only, never `innerHTML` with data; error message when
       data.json fails to load
-- [ ] `site/style.css`: system font stack, max width ~900px, card list,
+- [x] `site/style.css`: system font stack, max width ~900px, card list,
       readable on 360px width without horizontal scroll, dark theme via
       `prefers-color-scheme`
-- [ ] Check: `go run ./cmd/recs build -out _site` with a hand-written sample
+- [x] Check: `go run ./cmd/recs build -out _site` with a hand-written sample
       episode in a temp data dir, open `_site/index.html` via
       `python3 -m http.server` and verify with a headless fetch that
       `data.json` is served; `node --check site/app.js` passes
