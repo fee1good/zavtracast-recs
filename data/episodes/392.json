@@ -1,0 +1,82 @@
+{
+  "episode": 392,
+  "title": "Завтракаст 392 – Я всё понял!",
+  "date": "2026-10-15",
+  "page_url": "https://zavtracast.ru/392.html",
+  "audio_url": "https://media.blubrry.com/zavtracast/zavtracast.ru/p/zavtracast392-nowiknow.mp3",
+  "duration": 17421,
+  "records": [
+    {
+      "id": "392-ace-combat-8-wings-of-theve-maxim",
+      "title": "Ace Combat 8: Wings of Theve",
+      "type": "game",
+      "host": "maxim",
+      "verdict": "positive",
+      "summary": "Ведущий остался в восторге от игры, похвалив великолепную графику, отличный саундтрек, высокую зрелищность и захватывающие разнообразные миссии.",
+      "t": 14167
+    },
+    {
+      "id": "392-ace-combat-8-wings-of-theve-dima",
+      "title": "Ace Combat 8: Wings of Theve",
+      "type": "game",
+      "host": "dima",
+      "verdict": "mixed",
+      "summary": "Ведущий похвалил красивую графику, но удалил игру после нескольких миссий, так как не успевал за слишком высоким темпом геймплея.",
+      "t": 14167
+    },
+    {
+      "id": "392-spider-man-brand-new-day-timur",
+      "title": "Spider-Man: Brand New Day",
+      "type": "movie",
+      "host": "timur",
+      "verdict": "mixed",
+      "summary": "Ведущий охарактеризовал фильм как неплохой попкорновый блокбастер на вечер, однако раскритиковал слабый сюжет, качество спецэффектов и съемку.",
+      "t": 14532
+    },
+    {
+      "id": "392-spider-man-brand-new-day-dima",
+      "title": "Spider-Man: Brand New Day",
+      "type": "movie",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Ведущий остался доволен фильмом, положительно оценив впечатляющий CGI, зрелищную постановку экшена и динамичные боевые сцены.",
+      "t": 14532
+    },
+    {
+      "id": "392-gears-of-war-e-day-dima",
+      "title": "Gears of War: E-Day",
+      "type": "game",
+      "host": "dima",
+      "verdict": "mixed",
+      "summary": "Ведущий похвалил отличную графику, оптимизацию и сочную стрельбу, но остался разочарован затянутостью сюжетной кампании и неудачным смещением акцента с главных героев.",
+      "t": 15292
+    },
+    {
+      "id": "392-дизайнер-физики-gta1-объясняет-на-примерах-как-они-ее-создавали-team",
+      "title": "Дизайнер физики GTA1 объясняет на примерах как они ее создавали",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://patkerr.co.uk/2d-vehicles/",
+      "t": 0
+    },
+    {
+      "id": "392-история-древней-телеигры-про-кузю-team",
+      "title": "История древней телеигры про Кузю",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://www.youtube.com/watch?v=EVyDvL0JqKw",
+      "t": 0
+    },
+    {
+      "id": "392-как-мужик-купил-грузовик-amazon-от-rivian-team",
+      "title": "Как мужик купил грузовик Amazon от Rivian",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://www.youtube.com/watch?v=MnwCQZ_6Ssg",
+      "t": 0
+    }
+  ]
+}

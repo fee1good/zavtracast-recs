@@ -1,0 +1,92 @@
+{
+  "episode": 389,
+  "title": "Завтракаст 389 – Безопасный Милкивей",
+  "date": "2026-09-06",
+  "page_url": "https://zavtracast.ru/389.html",
+  "audio_url": "https://media.blubrry.com/zavtracast/zavtracast.ru/p/zavtracast389-safeway.mp3",
+  "duration": 18338,
+  "records": [
+    {
+      "id": "389-1666-amsterdam-maxim",
+      "title": "1666 Amsterdam",
+      "type": "game",
+      "host": "maxim",
+      "verdict": "negative",
+      "summary": "Максим сыграл около получаса в 1666 Amsterdam и сразу оформил возврат, раскритиковав проект за кривизну, неудачную боёвку и сумбурную подачу сюжета.",
+      "t": 5535
+    },
+    {
+      "id": "389-slashzero-timur",
+      "title": "SlashZero",
+      "type": "game",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Тимур прошёл демоверсию экшен-рогалика SlashZero и остался в приятном удивлении от бодрого геймплея и увлекательной структуры забегов.",
+      "t": 10760
+    },
+    {
+      "id": "389-metal-gear-solid-4-guns-of-the-patriots-dima",
+      "title": "Metal Gear Solid 4: Guns of the Patriots",
+      "type": "game",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Дима с удовольствием перепрошёл четвертую часть культовой серии в рамках переиздания, похвалив стабильную работу игры на современной системе.",
+      "t": 15120
+    },
+    {
+      "id": "389-resonant-a-plague-tale-legacy-dima",
+      "title": "Resonant: A Plague Tale Legacy",
+      "type": "game",
+      "host": "dima",
+      "verdict": "mixed",
+      "summary": "Дима почти прошёл спин-офф Plague Tale и получил смешанные впечатления: его огорчила корявая боёвка, но порадовали интригующий сюжет и великолепный визуал.",
+      "t": 15239
+    },
+    {
+      "id": "389-the-blood-of-dawnwalker-dima",
+      "title": "The Blood of Dawnwalker",
+      "type": "game",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Дима сыграл в пролог новой польской RPG про вампира и оценил проект положительно благодаря мрачному лору и сюжету, невзирая на специфическую боёвку.",
+      "t": 15732
+    },
+    {
+      "id": "389-cocorico-2-timur",
+      "title": "Cocorico 2",
+      "title_ru": "Неожиданные связи 2",
+      "type": "movie",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Тимур похвалил лёгкую французскую комедию за отличный актёрский состав, ненапряжный юмор и угарные жизненные ситуации.",
+      "t": 16118
+    },
+    {
+      "id": "389-bambu-lab-a2l-combo-maxim",
+      "title": "Bambu Lab A2L Combo",
+      "type": "other",
+      "host": "maxim",
+      "verdict": "positive",
+      "summary": "Максим делится отличными первыми впечатлениями от 3D-принтера, отмечая дружелюбный однокнопочный софт, быструю сборку и высокое качество печати.",
+      "t": 16451
+    },
+    {
+      "id": "389-как-современный-интернет-превратился-в-помойку-team",
+      "title": "Как современный интернет превратился в помойку",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://www.stephendiehl.com/posts/internet_predatory_cesspit/",
+      "t": 0
+    },
+    {
+      "id": "389-о-том-что-мешает-разработчикам-делать-игры-на-примере-halo-team",
+      "title": "О том, что мешает разработчикам делать игры на примере Halo",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://www.youtube.com/watch?v=s5qKN2Yxaok",
+      "t": 0
+    }
+  ]
+}

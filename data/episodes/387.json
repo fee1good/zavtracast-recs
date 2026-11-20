@@ -1,0 +1,154 @@
+{
+  "episode": 387,
+  "title": "Завтракаст 387 – Этичное корпоративное запугивание",
+  "date": "2026-08-06",
+  "page_url": "https://zavtracast.ru/387.html",
+  "audio_url": "https://media.blubrry.com/zavtracast/zavtracast.ru/p/zavtracast387-ethic.mp3",
+  "duration": 16528,
+  "records": [
+    {
+      "id": "387-pragmata-dima",
+      "title": "Pragmata",
+      "type": "game",
+      "host": "dima",
+      "verdict": "mixed",
+      "summary": "Диме не понравилась необходимость утомляющего одновременного контроля двух персонажей, из-за чего проект показался устаревшим и проходным.",
+      "t": 9488
+    },
+    {
+      "id": "387-atomic-heart-maxim",
+      "title": "Atomic Heart",
+      "type": "game",
+      "host": "maxim",
+      "verdict": "positive",
+      "summary": "Максим похвалил игру за отличную графику, качественную ПК-оптимизацию, прикольный советский сеттинг и увлекательный геймплей в стиле BioShock.",
+      "t": 9876
+    },
+    {
+      "id": "387-sand-timur",
+      "title": "Sand",
+      "type": "game",
+      "host": "timur",
+      "verdict": "negative",
+      "summary": "Тимур разочаровался в проекте из-за дёрганого управления и смещения фокуса от исследования мира на шагающих кораблях в сторону баттл-рояля и экстракшн-шутера.",
+      "t": 10157
+    },
+    {
+      "id": "387-sand-dima",
+      "title": "Sand",
+      "type": "game",
+      "host": "dima",
+      "verdict": "negative",
+      "summary": "Дима также критически оценил игру за излишне искусственный и неудобный менеджмент ресурсов во время сражений.",
+      "t": 10157
+    },
+    {
+      "id": "387-deadlock-timur",
+      "title": "Deadlock",
+      "type": "game",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Тимур остался доволен неожиданно интересным гибридом геройского шутера и MOBA с упором на вертикальность карт и прокачку персонажей.",
+      "t": 10699
+    },
+    {
+      "id": "387-deadlock-dima",
+      "title": "Deadlock",
+      "type": "game",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Дима положительно оценил оригинальный дизайн персонажей, их навыки и то, как игра сочетает механики Dota 2 и Overwatch.",
+      "t": 10699
+    },
+    {
+      "id": "387-masters-of-the-universe-maxim",
+      "title": "Masters of the Universe",
+      "title_ru": "Властелины вселенной",
+      "type": "movie",
+      "host": "maxim",
+      "verdict": "positive",
+      "summary": "Максим назвал картину отличным ненапрягающим семейным блокбастером с качественным саундтреком и душевным подходом режиссера.",
+      "t": 11484
+    },
+    {
+      "id": "387-masters-of-the-universe-timur",
+      "title": "Masters of the Universe",
+      "title_ru": "Властелины вселенной",
+      "type": "movie",
+      "host": "timur",
+      "verdict": "negative",
+      "summary": "Тимур назвал фильм наивной сказкой с нелогичным сюжетом и обильным кринжем, от которой тяжело получать удовольствие.",
+      "t": 11484
+    },
+    {
+      "id": "387-masters-of-the-universe-dima",
+      "title": "Masters of the Universe",
+      "title_ru": "Властелины вселенной",
+      "type": "movie",
+      "host": "dima",
+      "verdict": "negative",
+      "summary": "Диме не понравилась концепция и зашкаливающий кринж, из-за чего картина показалась ему устаревшим проходным продуктом.",
+      "t": 11730
+    },
+    {
+      "id": "387-president-curtis-timur",
+      "title": "President Curtis",
+      "title_ru": "Президент Кертис",
+      "type": "cartoon",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Тимур отметил, что спин-офф «Рика и Морти» получился более легковесным и аккуратным, но всё ещё содержит отличный юмор и ярких героев.",
+      "t": 12122
+    },
+    {
+      "id": "387-scavengers-reign-timur",
+      "title": "Scavengers Reign",
+      "title_ru": "Царство падальщиков",
+      "type": "cartoon",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Тимур остался в полном восторге от проработки невероятной инопланетной биосферы, напряженной атмосферы и глубокой драмы героев.",
+      "t": 12645
+    },
+    {
+      "id": "387-common-side-effects-timur",
+      "title": "Common Side Effects",
+      "title_ru": "Обычные побочные эффекты",
+      "type": "cartoon",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Тимур высоко оценил анимационный сериал за интересный политический детективный сюжет вокруг фармакологических корпораций и нестандартный визуал.",
+      "t": 12820
+    },
+    {
+      "id": "387-the-odyssey-maxim",
+      "title": "The Odyssey",
+      "title_ru": "Одиссея",
+      "type": "movie",
+      "host": "maxim",
+      "verdict": "positive",
+      "summary": "Максим восхитился монументальной режиссурой и операторской работой Нолана, назвав фильм отличным визуальным и акустическим полотном.",
+      "t": 13205
+    },
+    {
+      "id": "387-the-odyssey-timur",
+      "title": "The Odyssey",
+      "title_ru": "Одиссея",
+      "type": "movie",
+      "host": "timur",
+      "verdict": "negative",
+      "summary": "Тимур сильно разочаровался в картине из-за хаотичного монтажа в первой половине, небрежения Нолана к деталям и неудачного кастинга.",
+      "t": 13520
+    },
+    {
+      "id": "387-the-odyssey-dima",
+      "title": "The Odyssey",
+      "title_ru": "Одиссея",
+      "type": "movie",
+      "host": "dima",
+      "verdict": "mixed",
+      "summary": "Дима назвал фильм неплохим, но противоречивым, указав на разваливающуюся структуру сценария и неуместное стремление снять всё без CGI.",
+      "t": 14598
+    }
+  ]
+}

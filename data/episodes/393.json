@@ -1,0 +1,210 @@
+{
+  "episode": 393,
+  "title": "Завтракаст 393 – Не всем не нравится",
+  "date": "2026-10-28",
+  "page_url": "https://zavtracast.ru/393.html",
+  "audio_url": "https://media.blubrry.com/zavtracast/zavtracast.ru/p/zavtracast393-hinge.mp3",
+  "duration": 14631,
+  "records": [
+    {
+      "id": "393-castlevania-belmont-s-curse-maxim",
+      "title": "Castlevania: Belmont’s Curse",
+      "type": "game",
+      "host": "maxim",
+      "verdict": "mixed",
+      "summary": "Метроидвания в стилистике аниме от Netflix выделяется атмосферным Парижем, но страдает от монотонной музыки, малого разнообразия врагов и завышенной сложности платформинга. Ведущий рекомендует брать её только со скидкой любителям хардкорного платформинга.",
+      "t": 9045
+    },
+    {
+      "id": "393-derelikt-timur",
+      "title": "Derelikt",
+      "type": "game",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Коридорный научно-фантастический хоррор-шутер от первого лица в стилистике игр с первой PlayStation, вдохновлённый Alien Resurrection и Doom 3. Ведущему понравился свежий подход к жанру и густая мрачная атмосфера.",
+      "t": 9531
+    },
+    {
+      "id": "393-comrade-secrets-escape-timur",
+      "title": "Comrade: Secrets Escape",
+      "type": "game",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Стратегия в жанре Tower Defense в эстетике Red Alert про сдерживание массовых побегов зомби-экспериментов в СССР. Ведущий оценил масштабные волны врагов, разнообразную прокачку и возможность наносить ракетные удары.",
+      "t": 9634
+    },
+    {
+      "id": "393-comrade-secrets-escape-dima",
+      "title": "Comrade: Secrets Escape",
+      "type": "game",
+      "host": "dima",
+      "verdict": "negative",
+      "summary": "Тактический Tower Defense в советском сеттинге показался ведущему слишком скучным в начале. Отсутствие ярких механик на первых уровнях не даёт игре быстро увлечь игрока.",
+      "t": 9634
+    },
+    {
+      "id": "393-reshine-timur",
+      "title": "ReShine",
+      "type": "game",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Медитативный симулятор реставрации старинных предметов на Unreal Engine 5 с красивой детальной графикой. Ведущим понравился баланс между реалистичной физикой и расслабляющим геймплеем.",
+      "t": 9768
+    },
+    {
+      "id": "393-elta-defy-all-gods-timur",
+      "title": "Elta: Defy All Gods",
+      "type": "game",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Экшен-битэмап с элементами метроидвании в тибетско-азиатском сеттинге, напоминающий Enslaved и God of War. Ведущим понравилась проработанная боевая система, живописные локации и необычный стиль.",
+      "t": 9896
+    },
+    {
+      "id": "393-fart-together-timur",
+      "title": "Fart Together",
+      "type": "game",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Абсурдная кооперативная аркада про бегемотов на плоту, перемещающихся за счёт пердёжной тяги. Ведущие остались в восторге от весёлого геймплея и командного взаимодействия.",
+      "t": 10023
+    },
+    {
+      "id": "393-haunted-paws-timur",
+      "title": "Haunted Paws",
+      "type": "game",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Кооперативное приключение двух питомцев, спасающих хозяйку от пришельцев и проказничающих по пути. Ведущие похвалили разнообразный геймплей, забавные механики и милую атмосферу.",
+      "t": 10084
+    },
+    {
+      "id": "393-dreadmoore-dima",
+      "title": "Dreadmoore",
+      "type": "game",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Симулятор рыбалки от первого лица с элементами крафта и хоррора в стиле Лавкрафта на мрачных болотах. Ведущий похвалил красивый визуальный стиль, атмосферу и утягивающий игровой процесс.",
+      "t": 10193
+    },
+    {
+      "id": "393-false-echo-dima",
+      "title": "False Echo",
+      "type": "game",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Атмосферная нарративная игра про радиста-шифровальщика на подводной лодке 1940-х годов в духе Papers, Please. Ведущему очень понравились процесс расшифровки сообщений и напряжённые диалоги с замполитом.",
+      "t": 10310
+    },
+    {
+      "id": "393-there-is-no-ghost-at-the-grand-dima",
+      "title": "There Is No Ghost at The Grand",
+      "type": "game",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Ироничное приключение про ремонт отеля на уединенном острове с тонким британским юмором и разрушением четвёртой стены. Ведущему очень понравилась игра, несмотря на техническую сырость демоверсии.",
+      "t": 10413
+    },
+    {
+      "id": "393-the-devil-wears-prada-2-timur",
+      "title": "The Devil Wears Prada 2",
+      "title_ru": "Дьявол носит Prada 2",
+      "type": "movie",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Сиквел популярной драмеди спустя 20 лет, показывающий судьбы главных героев в эпоху упадка печатного глянца. Ведущему понравилась красивая съёмка, отличный актёрский состав и приятное завершение всех сюжетных линий.",
+      "t": 10560
+    },
+    {
+      "id": "393-star-wars-galactic-racer-maxim",
+      "title": "Star Wars Galactic Racer",
+      "type": "game",
+      "host": "maxim",
+      "verdict": "positive",
+      "summary": "Хардкорная аркадная гонка на подрейсерах во вселенной «Звёздных войн» с элементами рогалика от бывших разработчиков Criterion. Ведущий остался в восторге от ощущения скорости, сложного геймплея и отзывчивого управления.",
+      "t": 10976
+    },
+    {
+      "id": "393-brothers-timur",
+      "title": "Brothers",
+      "title_ru": "Братья",
+      "type": "series",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Комедийный сериал с Мэттью Макконахи и Вуди Харрельсоном, играющими самих себя в вымышленной истории о том, что они родные братья. Ведущий похвалил отличную химию между актёрами, лёгкий юмор и самоиронию.",
+      "t": 11291
+    },
+    {
+      "id": "393-clive-barker-s-hellraiser-revival-dima",
+      "title": "Clive Barker’s Hellraiser: Revival",
+      "type": "game",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Мрачный экшен-хоррор в духе классических Resident Evil с боди-хоррором и эротическими элементами. Ведущий оценил взрослый рейтинг и верность первоисточнику Клайва Баркера, несмотря на баги и бюджетность.",
+      "t": 11501
+    },
+    {
+      "id": "393-driveclub-timur",
+      "title": "Driveclub",
+      "type": "game",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "ПК-версия гоночного симулятора с PS4, запущенная через транслятор в 4K и 60 FPS. Ведущий похвалил отличную физику авто, реалистичные погодные эффекты и графику, отлично сохранившуюся до сих пор.",
+      "t": 11893
+    },
+    {
+      "id": "393-bloodborne-dima",
+      "title": "Bloodborne",
+      "type": "game",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Экшен-RPG, запущенная на ПК через транслятор в нативном 4K при 120 FPS с минимальным инпут-лагом и поддержкой фанатского мультиплеера. Ведущий остался в полном восторге от обновлённого игрового опыта.",
+      "t": 12240
+    },
+    {
+      "id": "393-lost-odyssey-dima",
+      "title": "Lost Odyssey",
+      "type": "game",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Классическая JRPG с Xbox 360, доступная на ПК благодаря вылизанному фанатскому рекомпайлу с поддержкой 4K и гибких настроек. Ведущий с огромным удовольствием перепроходит игру спустя 15 лет.",
+      "t": 12666
+    },
+    {
+      "id": "393-call-of-duty-modern-warfare-4-dima",
+      "title": "Call of Duty: Modern Warfare 4",
+      "type": "game",
+      "host": "dima",
+      "verdict": "mixed",
+      "summary": "Сюжетная кампания состоит из двух слабо связанных историй с блеклой постановкой и торопливым финалом. Ведущий остался в смешанных чувствах и советует покупать игру исключительно с глубокой скидкой.",
+      "t": 13196
+    },
+    {
+      "id": "393-лекции-питера-тиля-про-антихриста-team",
+      "title": "Лекции Питера Тиля про Антихриста",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://www.theverge.com/tech/1014252/peter-thiel-antichrist-lectures-analysis",
+      "t": 0
+    },
+    {
+      "id": "393-фантастический-рассказ-о-том-какой-станет-жизнь-если-учёные-всё-же-изобретут-asi-team",
+      "title": "Фантастический рассказ о том, какой станет жизнь, если учёные всё же изобретут ASI",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://www.lesswrong.com/posts/3375SZNGA5dKHQMie/i-did-this-without-your-knowledge",
+      "t": 0
+    },
+    {
+      "id": "393-что-происходит-на-пептид-коне-team",
+      "title": "Что происходит на пептид-коне",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://mamathemagazine.com/what-happened-at-the-peptide-party/",
+      "t": 0
+    }
+  ]
+}

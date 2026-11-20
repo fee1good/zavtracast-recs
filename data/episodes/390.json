@@ -1,0 +1,129 @@
+{
+  "episode": 390,
+  "title": "Завтракаст 390 – Игра про гнома",
+  "date": "2026-09-21",
+  "page_url": "https://zavtracast.ru/390.html",
+  "audio_url": "https://media.blubrry.com/zavtracast/zavtracast.ru/p/zavtracast390-gnome.mp3",
+  "duration": 19153,
+  "records": [
+    {
+      "id": "390-huawei-mate-x7-dima",
+      "title": "Huawei Mate X7",
+      "type": "other",
+      "host": "dima",
+      "verdict": "negative",
+      "summary": "Дима потестировал раскладной смартфон и остался недоволен форм-фактором и экосистемой. Он отметил неудобство использования, раздражающие рекламные уведомления и проблемы с синхронизацией приложений.",
+      "t": 10903
+    },
+    {
+      "id": "390-oneplus-15r-dima",
+      "title": "OnePlus 15R",
+      "type": "other",
+      "host": "dima",
+      "verdict": "positive",
+      "summary": "Дима перешел на этот смартфон в качестве основного и остался очень доволен плавной работой интерфейса, отличной производительностью и быстрым экраном.",
+      "t": 12382
+    },
+    {
+      "id": "390-the-bear-maxim",
+      "title": "The Bear",
+      "title_ru": "Медведь",
+      "type": "series",
+      "host": "maxim",
+      "verdict": "positive",
+      "summary": "Максим посмотрел все сезоны сериала об общепите и остался в восторге. Он похвалил отличный актерский состав, развитие персонажей и баланс драмы с комедией.",
+      "t": 14905
+    },
+    {
+      "id": "390-mass-effect-legendary-edition-timur",
+      "title": "Mass Effect: Legendary Edition",
+      "type": "game",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Тимур решил перепройти первую часть в составе переиздания и получил огромное удовольствие. Ему понравились графические подтяжки, исправление утомлявших элементов инвентаря и оригинальная атмосфера.",
+      "t": 15468
+    },
+    {
+      "id": "390-trails-in-the-sky-2nd-chapter-maxim",
+      "title": "Trails in the Sky 2nd Chapter",
+      "type": "game",
+      "host": "maxim",
+      "verdict": "positive",
+      "summary": "Максим высоко оценил ремейк jRPG, похвалив потрясающий сюжет, колоритный мир и удачно обновленную боевую систему.",
+      "t": 15840
+    },
+    {
+      "id": "390-eddington-timur",
+      "title": "Eddington",
+      "title_ru": "Эддингтон",
+      "type": "movie",
+      "host": "timur",
+      "verdict": "positive",
+      "summary": "Тимур остался под большим впечатлением от фантасмагоричной драмы Ари Астера с Хоакином Фениксом. Фильм запоминается отличной актерской игрой и нарастающим градусом безумия.",
+      "t": 16385
+    },
+    {
+      "id": "390-onimusha-way-of-the-sword-maxim",
+      "title": "Onimusha: Way of the Sword",
+      "type": "game",
+      "host": "maxim",
+      "verdict": "positive",
+      "summary": "Максим похвалил слешер за приятный игровой процесс, отзывчивую боевку с системой парирования и исследование мира. Он советует игру для расслабленного прохождения.",
+      "t": 16842
+    },
+    {
+      "id": "390-marvel-s-wolverine-dima",
+      "title": "Marvel's Wolverine",
+      "type": "game",
+      "host": "dima",
+      "verdict": "negative",
+      "summary": "Дима сильно разочаровался в игре к финалу из-за слабой сюжетной арки, затянутых одинаковых боев и багов к концу прохождения.",
+      "t": 17283
+    },
+    {
+      "id": "390-marvel-s-wolverine-timur",
+      "title": "Marvel's Wolverine",
+      "type": "game",
+      "host": "timur",
+      "verdict": "negative",
+      "summary": "Тимур раскритиковал игру за рваный сюжет, неуместные нарративные решения, монотонный геймплей и технические проблемы.",
+      "t": 17283
+    },
+    {
+      "id": "390-наносят-ли-плохие-термины-психологический-вред-team",
+      "title": "Наносят ли “плохие” термины психологический вред?",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://www.psypost.org/is-the-phrase-master-bedroom-actually-harmful-a-new-psychology-study-says-no/",
+      "t": 0
+    },
+    {
+      "id": "390-почему-люди-не-хотят-вот-эти-самые-машины-team",
+      "title": "Почему люди не хотят вот эти самые машины",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://www.youtube.com/watch?v=HgjXjPP_p3s&t=1s",
+      "t": 0
+    },
+    {
+      "id": "390-почему-gen-z-не-верит-в-отношения-team",
+      "title": "Почему Gen Z не верит в отношения",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://archive.is/sizBq",
+      "t": 0
+    },
+    {
+      "id": "390-игра-про-гнома-team",
+      "title": "Игра про гнома",
+      "type": "article",
+      "host": "team",
+      "verdict": "positive",
+      "url": "https://zavtracast.ru/gnome/",
+      "t": 0
+    }
+  ]
+}
