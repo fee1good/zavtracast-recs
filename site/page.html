@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{.Title}}</title>
+<meta name="description" content="{{.Description}}">
+<link rel="canonical" href="{{.URL}}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="{{.SiteName}}">
+<meta property="og:title" content="{{.Title}}">
+<meta property="og:description" content="{{.Description}}">
+<meta property="og:url" content="{{.URL}}">
+<meta name="twitter:card" content="summary">
+{{- with .GoogleVerification}}
+<meta name="google-site-verification" content="{{.}}">
+{{- end}}
+{{- with .YandexVerification}}
+<meta name="yandex-verification" content="{{.}}">
+{{- end}}
+<link rel="sitemap" type="application/xml" href="{{.Root}}sitemap.xml">
+<link rel="stylesheet" href="{{.Root}}style.css">
+{{- if .Home}}
+<link rel="alternate" type="application/json" href="{{.Root}}data.json">
+<script src="{{.Root}}app.js" defer></script>
+{{- end}}
+<script type="application/ld+json">{{.JSONLD}}</script>
+{{- with .Goatcounter}}
+<script data-goatcounter="https://{{.}}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+{{- end}}
+</head>
+<body>
+<header>
+{{- if not .Home}}
+<p class="crumbs"><a href="{{.Root}}">Все рекомендации</a></p>
+{{- end}}
+<h1>{{.Heading}}</h1>
+<p class="lead">{{.Lead}}</p>
+</header>
+<main>
+{{- if .Home}}
+<form id="controls" class="controls" role="search">
+<label class="search">
+<span>Поиск</span>
+<input id="q" type="search" placeholder="Название" autocomplete="off">
+</label>
+<label>
+<span>Тип</span>
+<select id="type"></select>
+</label>
+<label>
+<span>Ведущий</span>
+<select id="host"></select>
+</label>
+<label>
+<span>Оценка</span>
+<select id="verdict"></select>
+</label>
+<label>
+<span>Выпуск</span>
+<select id="episode"></select>
+</label>
+</form>
+{{- end}}
+<p id="count" class="count" aria-live="polite">Записей: {{len .Cards}}</p>
+<ul id="list" class="list">
+{{- range .Cards}}
+<li class="card">
+<div class="card-head"><h2 class="title">{{.Title}}</h2>{{with .TitleRU}}<span class="title-ru">{{.}}</span>{{end}}</div>
+<div class="meta"><span class="tag">{{.TypeLabel}}</span><span class="tag">{{.HostLabel}}</span><span class="tag verdict-{{.Verdict}}">{{.VerdictLabel}}</span></div>
+{{- with .Summary}}
+<p class="summary">{{.}}</p>
+{{- end}}
+<div class="links">
+{{- range .Links}}<a href="{{.Href}}" target="_blank" rel="noopener">{{.Text}}</a>{{end -}}
+</div>
+</li>
+{{- end}}
+</ul>
+</main>
+<nav class="episodes" aria-label="Выпуски">
+<h2>Выпуски</h2>
+<ul>
+{{- range .Episodes}}
+<li><a href="{{$.Root}}episodes/{{.Number}}/">{{.Title}}</a> <span class="muted">{{.Date}}, записей: {{.Count}}</span></li>
+{{- end}}
+</ul>
+</nav>
+<footer>
+<p>Неофициальный фанатский проект, не связан с авторами подкаста. Записи извлечены автоматически и могут содержать ошибки.</p>
+<p><a href="https://github.com/fee1good/zavtracast-recs">Исходный код</a> · <a href="https://zavtracast.ru">zavtracast.ru</a> · <a href="{{.Root}}llms.txt">llms.txt</a> · <a href="{{.Root}}data.json">data.json</a></p>
+</footer>
+</body>
+</html>
