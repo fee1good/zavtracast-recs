@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Рекомендации Завтракаста</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+<!--goatcounter-->
+</head>
+<body>
+<header>
+<h1>Рекомендации Завтракаста</h1>
+<p class="lead">Во что ведущие поиграли, что посмотрели и прочитали и что им понравилось.</p>
+</header>
+<main>
+<form id="controls" class="controls" role="search">
+<label class="search">
+<span>Поиск</span>
+<input id="q" type="search" placeholder="Название" autocomplete="off">
+</label>
+<label>
+<span>Тип</span>
+<select id="type"></select>
+</label>
+<label>
+<span>Ведущий</span>
+<select id="host"></select>
+</label>
+<label>
+<span>Оценка</span>
+<select id="verdict"></select>
+</label>
+<label>
+<span>Выпуск</span>
+<select id="episode"></select>
+</label>
+</form>
+<p id="count" class="count" aria-live="polite"></p>
+<ul id="list" class="list"></ul>
+</main>
+<footer>
+<p>Неофициальный фанатский проект, не связан с авторами подкаста. Записи извлечены автоматически и могут содержать ошибки.</p>
+<p><a href="https://github.com/fee1good/zavtracast-recs">Исходный код</a> · <a href="https://zavtracast.ru">zavtracast.ru</a></p>
+</footer>
+</body>
+</html>

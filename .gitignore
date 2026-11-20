@@ -1,0 +1,5 @@
+.transcripts/
+_site/
+*.mp3
+__pycache__/
+.venv/
