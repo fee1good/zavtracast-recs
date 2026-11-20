@@ -152,9 +152,9 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
 
 ### Task 5: Classifier
 
-- [ ] `internal/classify`: `type Generator interface { Generate(ctx context.Context,
+- [x] `internal/classify`: `type Generator interface { Generate(ctx context.Context,
       system, user string) (string, error) }`
-- [ ] `SystemPrompt` (Russian, const) with the rules: a record is a host's
+- [x] `SystemPrompt` (Russian, const) with the rules: a record is a host's
       own experience with a work (played, watched, read) with an opinion;
       skip news, rumors, announcements, trailers, retellings of others'
       reviews; one record per work and host, two hosts with different opinions
@@ -167,21 +167,21 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
       transcript and use it for spelling of titles and hosts; an item with no
       trace in the transcript produces no record; transcript is the source of
       truth, it has no punctuation and may misspell foreign names
-- [ ] `UserPrompt(ep feed.Episode, tr transcript.Transcript) string`:
+- [x] `UserPrompt(ep feed.Episode, tr transcript.Transcript) string`:
       sections «Выпуск» (title), «Впечатления из шоунотов» (numbered
       Impressions), «Шоуноты» (numbered Shownotes), «Транскрипт» (`tr.Lines()`)
-- [ ] Reply type `{records: [{title, title_ru, type, host, verdict, summary,
+- [x] Reply type `{records: [{title, title_ru, type, host, verdict, summary,
       time}]}`; `Schema() *genai.Schema` with enums for type (MediaTypes) and
       verdict, `title_ru` nullable, all fields required
-- [ ] `Classifier{Gen Generator; Backoff []time.Duration}`;
+- [x] `Classifier{Gen Generator; Backoff []time.Duration}`;
       `Classify(ctx, ep, tr) ([]record.Record, error)`: calls Gen, parses JSON;
       on Gen error or invalid JSON retries after each Backoff entry (stops on
       ctx done), returns the last error wrapped after the last attempt.
       `time` → T via `clock.Parse`, unparsable → T = -1 so validation drops
       it. `DefaultBackoff = []time.Duration{10*time.Second, 30*time.Second, 90*time.Second}`
-- [ ] `Articles(ep feed.Episode) []record.Record`: type article, host team,
+- [x] `Articles(ep feed.Episode) []record.Record`: type article, host team,
       verdict positive, T 0, Title and URL from the article
-- [ ] `Gemini` adapter in `gemini.go`, following the shape of
+- [x] `Gemini` adapter in `gemini.go`, following the shape of
       `NewGemini/Complete` from the rentradar project: `NewGemini(ctx,
       apiKey, model string) (*Gemini, error)` with `genai.BackendGeminiAPI`;
       `Generate` with 10 min timeout, `ResponseMIMEType "application/json"`,
@@ -190,7 +190,7 @@ items «Завтракаст 395», «Завтракаст 394» and «Магн�
       an error that includes finish reason and block reason; logs
       `slog.Info("gemini usage", "model", ..., "in", ..., "out", ...)`.
       `const DefaultModel = "gemini-3.6-flash"`
-- [ ] Tests with a fake Generator: happy path maps all fields and T;
+- [x] Tests with a fake Generator: happy path maps all fields and T;
       `title_ru` null → empty; invalid time → T -1; error twice then success
       with zero backoff → 3 calls; always error → error after
       `len(Backoff)+1` calls; invalid JSON retried; cancelled ctx stops
